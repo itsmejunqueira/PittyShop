@@ -8,7 +8,8 @@ import { SharedModule } from './shared/shared.module';
 import { ProductsComponent } from './pages/products/products.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { PetsComponent } from './pages/pets/pets.component';
-import { AccountModule } from './pages/account/account.module';
+import { CoreModule } from './core/core.module';
+import { AuthModule } from './pages/account/auth.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AccountModule } from './pages/account/account.module';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    AccountModule,
+    AuthModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

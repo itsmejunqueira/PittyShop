@@ -13,4 +13,4 @@ import { RecoveryPassComponent } from "./recovery-pass/recovery-pass.component";
     ],
     imports: []
 })
-export class AccountModule { }
+export class AuthModule { }
