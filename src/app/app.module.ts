@@ -9,7 +9,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { PetsComponent } from './pages/pets/pets.component';
 import { CoreModule } from './core/core.module';
-import { AuthModule } from './pages/account/auth.module';
+import { AuthModule } from './pages/auth/auth.module';
 
 @NgModule({
   declarations: [
