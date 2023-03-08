@@ -1,67 +1,117 @@
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { Subject } from "rxjs";
+import { Injectable, OnDestroy } from '@angular/core';
+import { Observable, BehaviorSubject, of, Subscription } from 'rxjs';
+import { map, catchError, switchMap, finalize } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { AuthHTTPService } from './auth-http.service';
+import { AuthModel } from '../models/auth.model';
+import { environment } from 'src/app/environments/environments';
 
-@Injectable()
-export class AuthService {
-  tokenStillValid() {
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthService implements OnDestroy {
+  forgotPassword(value: any) {
     throw new Error('Method not implemented.');
   }
-  public onClose: any;
-  constructor(
-    private _routerService: Router,    
-    // private _spinnerService: NgxSpinnerService,
-    // private _toastrService: ToastrService,
-  ) {
-    this.onClose = new Subject();
+  // private fields
+  private unsubscribe: Subscription[] = []; 
+  private authLocalStorageToken: string = `${environment.appVersion}-${environment.USERDATA_KEY}`;
+
+  // public fields
+  currentUser$: Observable<any>;
+  isLoading$: Observable<boolean>;
+  currentUserSubject: BehaviorSubject<any>;
+  isLoadingSubject: BehaviorSubject<boolean>;
+
+
+  get currentUserValue(): any {
+    return this.currentUserSubject.value;
   }
 
-  // public async login(params: any): Promise<void> {
-  //   this._spinnerService.show();   
-  //   this.setToken();
-  //   this._routerService.navigate(['/dashboard']);
-  //   this._spinnerService.hide();
-  // }
+  set currentUserValue(user: any) {
+    this.currentUserSubject.next(user);
+  }
 
-  // public async updatePassword(params: any): Promise<void> {}
+  constructor(
+    private authHttpService: AuthHTTPService,
+    private router: Router
+  ) {
+    this.isLoadingSubject = new BehaviorSubject<boolean>(false);
+    this.currentUserSubject = new BehaviorSubject<any>(undefined);
+    this.currentUser$ = this.currentUserSubject.asObservable();
+    this.getUserByToken();
+    this.isLoading$ = this.isLoadingSubject.asObservable();
+  }
 
-  // public async recoveryPassword(params: any): Promise<void> {}
- 
+  // public methods
+  login(email: string, password: string): Observable<any> {
+    this.isLoadingSubject.next(true);
+    return this.authHttpService.login(email, password).pipe(
+      map((res) => {
+        const auth = new AuthModel();
+        auth.token = res.token;
+        auth.expiresIn = new Date(Date.now() + 3600);
+        const result = this.setAuthFromLocalStorage(auth);
+        this.setUserFromLocalStorage({email: email});
+        return result;
+      }),
+      switchMap((res) => {
+        return this.getUserByToken();
+      }),
+      catchError((err) => of(null)),
+      finalize(() => this.isLoadingSubject.next(false))
+    );
+  }
 
-  // public logout(err?: any): void {
-  //   if (err) {
-  //     this._toastrService.error('Sessão Expirada', 'Sua sessão será encerrada');
-  //     this.onClose.next(false);
-  //   }
-  //   this.removeToken();
-  //   this._routerService.navigate(['login']);
-  //   this._spinnerService.hide();
-  // }
+  logout() {
+    localStorage.removeItem(this.authLocalStorageToken);
+    this.currentUserSubject = new BehaviorSubject<any>(undefined);
+    this.router.navigate(['/login'], {
+      queryParams: {},
+    });
+  }
 
-  // public getToken(): string {
-  //   return sessionStorage.getItem('tokenName') || '';
-  // }
+  getUserByToken(): Observable<any> {
+    const auth = this.getAuthFromLocalStorage();
+    if (!auth || !auth.token) {
+      return of(undefined);
+    }
 
-  // public tokenStillValid(){
-  //   const token = this.getToken();
-  //   if (token) {
-  //     const dateLimit = new Date(JSON.parse(token));
-  //     const actualDate = new Date();
-  //     if (actualDate > dateLimit) {
-  //       return false;
-  //     }
-  //   } else {
-  //     return false;
-  //   }
-  //   return true;
-  // }
+    if (new Date(auth.expiresIn) >= new Date(Date.now())) {
+      let user = this.getUserFromLocalStorage();
 
-  // public setToken(): void {
-  //   var token = new Date();
-  //   token.setMinutes(token.getMinutes() + 5);
-  //   sessionStorage.setItem('tokenName', JSON.stringify(token));
-  // }
+      this.currentUserSubject = new BehaviorSubject<any>(user);
+      return of(user)
+    } else {
+      this.logout();
+      return of(undefined);
+    }
+  }
 
-  // public removeToken(): void {
-  //   sessionStorage.removeItem('tokenName');
-   }
+  // private methods
+  private setAuthFromLocalStorage(auth: any) {
+    localStorage.setItem(this.authLocalStorageToken, JSON.stringify(auth));
+  }
+
+  public getAuthFromLocalStorage(): AuthModel|null {
+    try {
+      const authData = JSON.parse(localStorage.getItem(this.authLocalStorageToken) || '{}');
+      return authData;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
+
+  public getUserFromLocalStorage() {
+    return JSON.parse(localStorage.getItem("logged-user") || '{}');
+  }
+
+  private setUserFromLocalStorage(user:any) {
+    localStorage.setItem("logged-user", JSON.stringify(user));
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe.forEach((sb) => sb.unsubscribe());
+  }
+}

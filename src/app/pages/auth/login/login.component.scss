@@ -1,0 +1,41 @@
+.card {
+    background: #fbf9f7 ;
+    max-width: 1000px;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    position: relative;
+    border-radius: 16px;
+    border: 2px solid #fff;
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.card-input{
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    min-width: 290px;
+    max-width: 343px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input-holder{
+    width: 95%;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+// .logo{
+//     width: 100%;
+// }

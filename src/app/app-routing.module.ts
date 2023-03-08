@@ -11,15 +11,22 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/auth/auth.module').then((m) => m.AuthModule),
   },
+  // {
+  //   path: '',
+  //   loadChildren: () =>
+  //     import('./shared/shared.module').then(
+  //       (m) => m.SharedModule
+  //     ),
+  //   canActivate: [],
+  // },
   {
-    path: '',
-    loadChildren: () =>
-      import('./shared/shared.module').then(
-        (m) => m.SharedModule
-      ),
+    path: 'dashboard',
     canActivate: [],
+    component: DashboardComponent
   },
-
+  { path: 'pets', canActivate: [], component: PetsComponent },
+  { path: 'products', component: ProductsComponent },
+   { path: 'cart', component: CartComponent },
 ];
 
 @NgModule({

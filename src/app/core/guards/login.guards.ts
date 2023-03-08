@@ -8,18 +8,18 @@ import {
 import { AuthService } from '../services/auth.service';
 
 @Injectable({ providedIn: 'root' })
-export class AuthGuard implements CanActivate {
-  constructor(private authenticationService: AuthService) {}
+export class LoginGuard implements CanActivate {
+  constructor(private authService: AuthService,
+    private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const currentUser = this.authenticationService.currentUserValue;
+    const currentUser = this.authService.currentUserValue;
     if (currentUser) {
-      // logged in so return true
-      return true;
+      // logged in so redirect to home page
+      return false;
     }
 
-    // not logged in so redirect to login page with the return url
-    this.authenticationService.logout();
-    return false;
+    // not logged so can access login page
+    return true;
   }
 }
