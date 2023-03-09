@@ -1,28 +1,40 @@
-    <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-8 me-3">
-            <img src="assets/img/login-pets.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-4">
-            <div class="card-input"> 
-                <form [formGroup]="formlogin" class="login-box" (ngSubmit)="submit()">
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" 
-                        placeholder="name@example.com">
-                        <label for="floatingInput">Email address</label>
-                      </div>
-                      <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword"
-                         placeholder="Password">
-                        <label for="floatingPassword">Password</label>
-                      </div>
-                        <button type="submit" class="btn btn-primary btn-block">
-                            Acesse sua conta
-                        </button>
-                </form>
-            </div>
-          </div>
-        </div>
-    </div>
+<div class="container-login">
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img src="assets/img/login-pets.jpg" class="img-fluid" alt="...">
+      </div>
+      <div class="col-md-6">
+        <div class="card-input">
+          <form [formGroup]="formlogin" class="login-box" (ngSubmit)="submit()">
+            <label class="input">
+              <input class="input__field form-control shadow-none" type="text" placeholder="" formControlName="email" />
+              <span class="input__label" Título do Cargo>Email </span>
+            </label>
+            <label class="input">
+              <input class="input__field form-control shadow-none" type="text" placeholder=""
+                formControlName="nomenclatura" />
+              <span class="input__label">Password</span>
+            </label>
+            <button type="submit" class="btn btn-purple">
+              Acesse sua conta
+            </button>
+          </form>
+          <span class="d-flex justify-content-center">
+            Não tem conta? <a class="a-link ms-2" href="/new-password">Crie uma agora! </a>
+          </span>
 
-    
+          <button type="submit" class="btn btn-white">
+            <i class="bi bi-google me-3"></i>
+            Entrar com Google
+          </button>
+          <button type="submit" class="btn btn-blue">
+            <i class="bi bi-facebook me-2"></i>
+            Entrar com Facebook
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
