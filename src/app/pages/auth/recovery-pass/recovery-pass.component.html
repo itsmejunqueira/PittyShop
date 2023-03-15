@@ -1,1 +1,39 @@
-<p>recovery-pass works!</p>
+<div class="container-login">
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-12">
+          <img src="assets/img/esqueceu-senha.jpg" class="img-fluid" alt="..." />
+        </div>
+        <div class="col-12">
+          <div class="card-input">
+            <form [formGroup]="formlogin" class="login-box" (ngSubmit)="submit()">
+              <label class="input">
+                <input
+                  class="input__field form-control shadow-none"
+                  type="text"
+                  placeholder=" "
+                  id="email"
+                  required
+                  formControlName="emailAddress"
+                />
+                <span class="input__label" Título do Cargo> Email </span>
+              </label>
+          
+              <button type="submit"  
+              [disabled]="!formlogin.valid" 
+              class="btn btn-purple">
+              <span class="d-flex align-items-center justify-content-center">
+                Recuperar
+              </span>
+              </button>
+            </form>
+            <span class="d-flex justify-content-center">
+              Não tem conta?
+              <a class="a-link ms-2" href="/new-password">Crie uma agora! </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

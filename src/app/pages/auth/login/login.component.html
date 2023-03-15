@@ -2,26 +2,55 @@
   <div class="card mb-3">
     <div class="row g-0">
       <div class="col-md-6">
-        <img src="assets/img/login-pets.jpg" class="img-fluid" alt="...">
+        <img src="assets/img/login-pets.jpg" class="img-fluid" alt="..." />
       </div>
       <div class="col-md-6">
         <div class="card-input">
           <form [formGroup]="formlogin" class="login-box" (ngSubmit)="submit()">
             <label class="input">
-              <input class="input__field form-control shadow-none" type="text" placeholder="" formControlName="email" />
-              <span class="input__label" Título do Cargo>Email </span>
+              <input
+                class="input__field form-control shadow-none"
+                type="text"
+                placeholder=" "
+                id="email"
+                required
+                formControlName="email"
+              />
+              <span class="input__label" Título do Cargo> Email </span>
             </label>
             <label class="input">
-              <input class="input__field form-control shadow-none" type="text" placeholder=""
-                formControlName="nomenclatura" />
-              <span class="input__label">Password</span>
+              <input
+                class="input__field form-control shadow-none"
+                type="text"
+                placeholder=" "
+                id="password"
+                required
+                formControlName="senha"
+                [type]="show_eye ? 'text' : 'password'"
+              />
+              <span class="input__label">Senha</span>
+              <img
+              class="viewPassword"
+              (click)="show_eye = !show_eye"
+              [src]="
+                !show_eye ? 'assets/img/Hide.svg' : 'assets/img/Unhide.svg'
+              "
+              alt=""
+            />
             </label>
-            <button type="submit" class="btn btn-purple">
-              Acesse sua conta
-            </button>
+            <span class="d-flex justify-content-end">
+              
+              <a class="a-forgot" [routerLink]="['/auth/reset-password']">esqueci minha senha</a>
+            </span>
+           
           </form>
+          <button type="submit" class="btn btn-purple" >
+            Acesse sua conta
+          </button>
+
           <span class="d-flex justify-content-center">
-            Não tem conta? <a class="a-link ms-2" href="/new-password">Crie uma agora! </a>
+            Não tem conta?
+            <a class="a-link ms-2" [routerLink]="['/auth/new-password']">Crie uma agora! </a>
           </span>
 
           <button type="submit" class="btn btn-white">
@@ -32,7 +61,6 @@
             <i class="bi bi-facebook me-2"></i>
             Entrar com Facebook
           </button>
-
         </div>
       </div>
     </div>
