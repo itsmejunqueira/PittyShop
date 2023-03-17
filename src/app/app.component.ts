@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Tooltip } from 'bootstrap';
 
 @Component({
   selector: 'app-root',

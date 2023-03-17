@@ -1,9 +1,10 @@
 .nav-container {
+    background-color: #fbf9f7;
     .dropdown-divider {
         height          : 1px;
         margin-bottom   : 20px;
         overflow        : hidden;
-        background-color: silver;
+        background-color: rgb(235 205 217);
     }
 
     .nav-menu {
@@ -30,7 +31,7 @@
 
                 .form-search {
                     height       : 40px;
-                    border-color : rgb(237, 27, 27);
+                    border-color : rgb(215 15 97);
                     border-radius: 10px;
                     box-shadow   : none;
                 }
@@ -41,7 +42,7 @@
                     width     : 45px;
 
                     .bi-search-heart {
-                        color       : rgb(237, 27, 27);
+                        color       : rgb(215 15 97);
                         margin-top  : 8px;
                         margin-right: 50px;
                         cursor      : pointer;
@@ -52,9 +53,20 @@
 
             .navbar-brand {
                 font-weight: bolder;
-                color: rgb(237, 27, 27);
+                color: rgb(215 15 97);
             }
-
+         .nav-item{
+            cursor      : pointer;
+            .btn {
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+            }
+            .bi-basket-fill{
+                color       : rgb(215 15 97);
+                
+            }
+         }
 
         }
     }
@@ -65,8 +77,7 @@
     }
 
     .nav-link {
-        color      : rgb(237, 27, 27);
+        color      : rgb(215 15 97);
         font-weight: 500;
-        cursor     : pointer;
     }
 }

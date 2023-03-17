@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
-// import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -26,8 +25,8 @@ export class LoginComponent {
 
   ngOnInit(): void {
     this.loadForm();
-    // this.returnUrl =
-    //   this.route.snapshot.queryParams['returnUrl'.toString()] || '/';
+    this.returnUrl =
+      this.route.snapshot.queryParams['returnUrl'.toString()] || '/';
   }
 
   loadForm() {

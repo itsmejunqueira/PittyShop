@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { LoadTooltipDirective } from './directives/load-tooltip.directive';
 
 
 @NgModule({
   declarations: [
-    NavBarComponent
+    NavBarComponent,
+    LoadTooltipDirective
   ],
   imports: [
     CommonModule,
@@ -15,6 +17,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   ],
   exports: [
     NavBarComponent,
+    LoadTooltipDirective
   ]
 })
 export class SharedModule { }
