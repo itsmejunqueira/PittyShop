@@ -1,7 +1,33 @@
 # PittyShop
+📌About 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+Loja virtual - petshop 
+- Telas de Login / Recuperar senha / Novo cadastro  
+- Tela de Inicio (dashboard).
+- Carrinho de compras 
+- Produtos 
+- Perfil dos pets
 
+
+login de acesso - fornecida pela api publica: 
+
+    email: ,
+    password: 
+
+👓 
+ * [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+ * Html/Css/js
+ * Angular Material and Bootstrap 5.3
+ * API https://reqres.in/ 
+
+
+
+![login](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/login.JPG)
+![recuperar senha](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/recuperar-senha.PNG)
+![criar conta](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/criar-conta.JPG)
+
+
+📕Installation
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -25,3 +51,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+Made with love ❤️ by Leticia Junqueira 🚀.
