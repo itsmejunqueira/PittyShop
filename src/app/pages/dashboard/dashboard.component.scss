@@ -1,0 +1,55 @@
+.carousel {
+    .carousel-indicators .active{
+            background-color: rgb(215 15 97);
+        
+    }
+    .carousel-control-prev{
+        position: absolute;
+        bottom: 50%;
+        right: 0.1rem;
+        margin-left: 0.5rem;
+        transform: translateY(50%);
+        border-radius: 20px;
+        background-color: #fff;
+        opacity: .7;
+        width: 34px;
+        height: 34px;
+        text-align: center;
+        padding-top: 0.3rem;
+        top: 100px;
+        .bi-caret-left-fill{
+            color: rgb(215 15 97);
+            margin-bottom: 5px;
+        }
+    }
+    .carousel-control-next {
+        position: absolute;
+        bottom: 50%;
+        right: 0.1rem;
+        margin-right: 0.5rem;
+        transform: translateY(50%);
+        border-radius: 20px;
+        background-color: #fff;
+        opacity: .7;
+        width: 34px;
+        height: 34px;
+        text-align: center;
+        padding-top: 0.3rem;
+        top: 100px;
+        .bi-caret-right-fill{
+            color: rgb(215 15 97);
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.offers{
+    ul {
+        list-style-type: none;
+    }
+    .go-offers{
+        color: inherit;
+        text-decoration: inherit;
+        cursor: pointer;
+    }
+}
