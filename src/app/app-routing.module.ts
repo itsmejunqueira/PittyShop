@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './pages/cart/cart.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { PetsComponent } from './pages/pets/pets.component';
+import { HomeComponent } from './pages/home/home.component';
 import { ProductsComponent } from './pages/products/products.component';
 
 const routes: Routes = [
@@ -20,17 +19,16 @@ const routes: Routes = [
   //   canActivate: [],
   // },
   {
-    path: 'dashboard',
+    path: '',
     canActivate: [],
-    component: DashboardComponent
+    component: HomeComponent,
   },
-  { path: 'pets', canActivate: [], component: PetsComponent },
   { path: 'products', component: ProductsComponent },
-   { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
