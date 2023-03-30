@@ -11,6 +11,7 @@ import { AuthModule } from './pages/auth/auth.module';
 import { ProductsModule } from './pages/products/products.module';
 import { HomeModule } from './pages/home/home.module';
 import { CartModule } from './pages/cart/cart.module';
+import { ProductsService } from './core/services/products.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { CartModule } from './pages/cart/cart.module';
     HomeModule,
     CartModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
