@@ -2,51 +2,57 @@
 <div class="container">
   <div class="row container-products">
     <div class="col-3 filter-area">
-      <div class="filter-category" 
-       *ngFor="let categoria of filters">
+      <div class="filter-category" *ngFor="let categoria of filters">
         <span>
-          <h5>{{categoria.name}}</h5>
-          <li class="filter-style" *ngFor="let item of categoria.data"> 
+          <h5>{{ categoria.name }}</h5>
+          <li class="filter-style" *ngFor="let item of categoria.data">
             <label>
-                <input
+              <input
                 class="form-check-input me-2"
                 type="radio"
                 name="flexRadioDefault"
                 id="flexRadioDefault1"
                 (click)="checkItem(item)"
               />
-              <span> {{item.name}}</span>
+              <span> {{ item.name }}</span>
             </label>
-          </li>          
+          </li>
         </span>
       </div>
     </div>
-    <div class="col-9 products-area" *ngFor="let product of products;">
-      <ul class="section-cards">
-        <li class="card-product">
-          <a>
-            <div class="product-content">
-              <div class="card-header">
-                <img class="photo-style"
-                [src]="product.photo" alt="photo"/>
-              </div>
-              <div class="card-footer">
-                <h4>
-                {{ product.description}}
-                </h4>
-                <div class="product-price">
-                    <h6>
-                        {{ product.name}}
-                        </h6>
-                    <span> 
-                        {{product.price}}
-                    </span>
+    <div class="col-9 products-area">
+      <div class="row">
+        <div class="col-3" *ngFor="let product of products">
+          <ul class="section-cards">
+            <li class="card-product">
+              <a>
+                <div class="product-content">
+                  <div class="card-header">
+                    <img
+                      class="photo-style"
+                      [src]="product.photo"
+                      alt="photo"
+                    />
+                  </div>
+                  <div class="card-footer">
+                    <h4>
+                      {{ product.description }}
+                    </h4>
+                    <div class="product-price">
+                      <h6>
+                        {{ product.name }}
+                      </h6>
+                      <span>
+                        {{ product.price }}
+                      </span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </a>
-        </li>
-       
-      </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
