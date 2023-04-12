@@ -1,38 +1,112 @@
 .container {
     .container-products {
-        display: flex;
+        display        : flex;
         justify-content: space-around;
-        margin-top: 5%;
+        margin-top     : 5%;
+
         .filter-area {
-            .filter-category{
+            .filter-category {
                 font-weight: bold;
-                font-size: 20px;
-                font-family: Georgia, 'Times New Roman', Times, serif ; 
-                margin: 20px 20px;
-                .filter-style{
+                font-size  : 20px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                margin     : 20px 20px;
+
+                .filter-style {
                     list-style-type: none;
-                     font-weight: 200;
-                     font-size: 15px;
-                     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                    font-weight    : 200;
+                    font-size      : 15px;
+                    font-family    : 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 }
             }
         }
+
         .products-area {
-            .section-cards {
-                display: grid;
+
+            .carousel {
                 position: relative;
-                grid-gap: 1rem;
+                width: 100%;
+                padding: 0 2.5rem;
+                height: 160px;
+                .carousel-control-prev {
+                    bottom          : 50%;
+                    transform       : translateY(50%);
+                    width           : 0px;
+        
+                    .bi-arrow-left {
+                        color        : rgb(108, 11, 52);
+                        margin-bottom: 5px;
+                    }
+                }
+               
+                .carousel-control-next {
+                    bottom          : 50%;
+                    transform       : translateY(50%);
+                    width           : 0px;                    
+                }
+                .carousel-item{
+                    height: auto;
+                    a{
+                        text-decoration: none;
+                    }
+                    h5{
+                       color: rgb(215, 15, 97);
+                        font-size: 15px;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .drop-order {
+                .btn {
+                    border            : none;
+                }
+
+                border         : 2px solid rgb(235, 205, 217);
+                box-shadow     : none;
+                border-radius  : 10px;
+                width: auto;
+                display        : flex;
+                justify-content: space-between;
+
+                .btn-check:focus+.btn,
+                .btn:focus {
+                    box-shadow: none;
+                    color: rgb(215, 15, 97);
+                }
+
+                .dropdown-menu {
+                    border: 2px solid rgb(235, 205, 217);
+                    width: 200px;
+                    .dropdown-item {
+
+                        &:hover {
+                            color      : rgb(215, 15, 97);
+                            font-weight: 500;
+
+                            &::before {
+                                visibility       : visible;
+                                -webkit-transform: scaleX(1);
+                                transform        : scaleX(1);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .section-cards {
+                display              : grid;
+                position             : relative;
+                grid-gap             : 1rem;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
 
                 .card-product {
-                    height: 20.5rem;
-                    border-radius: 0;
-                    margin: 0.25rem 1rem 0.5rem 0rem;
-                    box-shadow: none;
-                    box-sizing: content-box;
-                    max-width: max-content;
+                    height          : 20.5rem;
+                    border-radius   : 0;
+                    margin          : 0.25rem 1rem 0.5rem 0rem;
+                    box-shadow      : none;
+                    box-sizing      : content-box;
+                    max-width       : max-content;
                     background-color: transparent;
-                    list-style-type: none;
+                    list-style-type : none;
                 }
             }
         }

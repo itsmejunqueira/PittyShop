@@ -1,6 +1,11 @@
 <app-nav-bar> </app-nav-bar>
 <div class="container">
   <div class="row container-products">
+    <div class="Banner-pet"> 
+      <h4> Os Melhores Produtos para Cachorro </h4>
+      <img src="assets/img/cachorro.jpg" alt="" class="w-100">
+      </div>
+
     <div class="col-3 filter-area">
       <div class="filter-category" *ngFor="let categoria of filters">
         <span>
@@ -20,8 +25,118 @@
         </span>
       </div>
     </div>
-    <div class="col-9 products-area">
+    <div class="col-9 products-area">     
+      <h4 class="mt-5"> O que seu cachorro precisa?</h4>
+      <div id="carouselExample" class="carousel slide mt-5">       
+        <ul class="carousel-inner">
+          <li class="carousel-item active">
+            <a href="#">
+            <img
+              src="/assets/img/cachorro-acessorios-para-alimentacao.jpg"
+              class="d-block" alt="...">
+             <h5>Acessórios para Alimentação</h5> 
+            </a>
+          </li>
+          <li class="carousel-item">
+           <a href="#"> 
+            <img
+              src="/assets/img/cachorro-medicina-saude.jpg"
+              class="d-block" alt="...">
+            <h5>Medicina e Saúde</h5>  
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+            <img
+            src="/assets/img/cachorro-higiene-limpeza.jpg"
+             class="d-block" alt="...">
+            <h5> Higiene e Limpeza</h5>
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+            <img
+            src="/assets/img/casinhas-e-acessorios.jpg"
+             class="d-block" alt="...">
+            <h5> Casinhas e Acessórios</h5>
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+            <img
+            src="/assets/img/coleiras-guias-e-peitorais.jpg"
+             class="d-block" alt="...">
+            <h5> Coleiras guias e peitorais</h5>
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+            <img
+            src="/assets/img/caixas-bolsas-de-transporte.jpg"
+             class="d-block" alt="...">
+            <h5> Caixas bolsas de transporte</h5>
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+            <img
+            src="/assets/img/brinquedos.jpg"
+             class="d-block" alt="...">
+            <h5> Brinquedos</h5>
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+            <img
+            src="/assets/img/shampoos-e-cosmeticos.jpg"
+             class="d-block" alt="...">
+            <h5> Shampoos e cosmeticos</h5>
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+            <img
+            src="/assets/img/ossinhos-e-petiscos.jpg"
+             class="d-block" alt="...">
+            <h5> Ossinhos e petiscos</h5>
+            </a>
+          </li>
+          <li class="carousel-item">
+            <a href="#">
+            <img
+            src="/assets/img/marcas-exclusivas-racoes.png"
+             class="d-block" alt="...">
+            <h5> Alimentação seca</h5>
+            </a>
+          </li>
+        </ul>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <i class="bi bi-arrow-left"></i>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
       <div class="row">
+        <div class="d-flex align-items-center justify-content-between mt-4 mb-4"> 
+            <h4> Todos os produtos para cachorro </h4> 
+            <div class="dropdown drop-order">
+              <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Ordenar produtos por
+              </a>        
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Relevancia</a></li>
+                <li><a class="dropdown-item" href="#">Maior preço</a></li>
+                <li><a class="dropdown-item" href="#">Menor preço</a></li>
+                <li><a class="dropdown-item" href="#">Melhor avaliados</a></li>
+                <li><a class="dropdown-item" href="#">Melhores descontos</a></li>
+                <li><a class="dropdown-item" href="#">Lançamentos</a></li>
+
+              </ul>
+            </div>
+        </div>
         <div class="col-3" *ngFor="let product of products">
           <ul class="section-cards">
             <li class="card-product">

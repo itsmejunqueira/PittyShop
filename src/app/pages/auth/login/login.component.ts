@@ -39,7 +39,7 @@ export class LoginComponent {
   submit() {
     this.hasError = false;
     this.authService
-      .login(this.formlogin.value.login, this.formlogin.value.senha)
+      .login(this.formlogin.value.email, this.formlogin.value.senha)
       .subscribe((user) => {
         if (user) {
           this.router.navigate([this.returnUrl]);

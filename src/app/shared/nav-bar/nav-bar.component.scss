@@ -1,5 +1,6 @@
 .nav-container {
     background-color: #fbf9f7;
+
     .dropdown-divider {
         height          : 1px;
         margin-bottom   : 20px;
@@ -19,10 +20,10 @@
             display        : flex;
             justify-content: space-around;
             align-items    : center;
-
-            margin     : 20px;
-            font-weight: 500;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size      : 20px;
+            margin         : 20px;
+            font-weight    : 500;
+            font-family    : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
             .search {
                 display    : flex;
@@ -52,21 +53,34 @@
             }
 
             .navbar-brand {
+                width      : 9.5rem;
+                font-size  : 30px;
                 font-weight: bolder;
-                color: rgb(215 15 97);
+                color      : rgb(215 15 97);
             }
-         .nav-item{
-            cursor      : pointer;
-            .btn {
-                background-color: transparent;
-                border: none;
-                box-shadow: none;
+
+            .nav-item {
+                cursor: pointer;
+
+                .btn {
+                    background-color: transparent;
+                    border          : none;
+                    box-shadow      : none;
+                    height          : 25px;
+                }
+
+                .bi-basket-fill {
+                    color: rgb(215 15 97);
+
+                }
+                .nav-link {
+                    color      : rgb(215 15 97);
+                    font-weight: 500;
+                    border: none;
+                    box-shadow: none;
+                    background-color: transparent;       
+                }
             }
-            .bi-basket-fill{
-                color       : rgb(215 15 97);
-                
-            }
-         }
 
         }
     }
@@ -74,10 +88,23 @@
     .nav-itens {
         display        : flex;
         justify-content: center;
+
+        .nav-link {
+            color      : rgb(215 15 97);
+            font-weight: 500;
+            border: none;
+            box-shadow: none;
+            background-color: transparent;   
+            &:hover {
+                // border-style: none none none solid;
+                border          : 0.8px solid rgb(215 15 97) !important;
+                background-color: white;
+                // border-left: 1px solid #000;
+                // border-right: 2px solid #FF0;
+            }    
+        }
     }
 
-    .nav-link {
-        color      : rgb(215 15 97);
-        font-weight: 500;
-    }
+
 }
+

@@ -3,9 +3,9 @@
 .container-itens {
 
     .carousel {
+        width: 1000px;
         .carousel-indicators .active {
             background-color: rgb(215 15 97);
-
         }
 
         .carousel-control-prev {
@@ -28,7 +28,9 @@
                 margin-bottom: 5px;
             }
         }
-
+        .carousel-inner {
+        border-radius: 20px;
+        }
         .carousel-control-next {
             position        : absolute;
             bottom          : 50%;
@@ -48,6 +50,10 @@
                 color        : rgb(215 15 97);
                 margin-bottom: 5px;
             }
+        }
+        .carousel-item{
+            height: auto;
+            width: 1000px;
         }
     }
 
