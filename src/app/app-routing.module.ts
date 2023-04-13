@@ -23,7 +23,7 @@ const routes: Routes = [
     canActivate: [],
     component: HomeComponent,
   },
-  { path: 'products', component: ProductsComponent },
+  { path: 'products/:category', component: ProductsComponent },
   { path: 'cart', component: CartComponent },
 ];
 

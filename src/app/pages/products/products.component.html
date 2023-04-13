@@ -1,10 +1,10 @@
 <app-nav-bar> </app-nav-bar>
 <div class="container">
   <div class="row container-products">
-    <div class="Banner-pet"> 
-      <h4> Os Melhores Produtos para Cachorro </h4>
+    <div class="Banner-pet">
+      <h4> Os Melhores Produtos para {{selectedPet}} </h4>
       <img src="assets/img/cachorro.jpg" alt="" class="w-100">
-      </div>
+    </div>
 
     <div class="col-3 filter-area">
       <div class="filter-category" *ngFor="let categoria of filters">
@@ -12,106 +12,93 @@
           <h5>{{ categoria.name }}</h5>
           <li class="filter-style" *ngFor="let item of categoria.data">
             <label>
-              <input
-                class="form-check-input me-2"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-                (click)="checkItem(item)"
-              />
+              <input class="form-check-input me-2" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                (click)="checkItem(item)" />
               <span> {{ item.name }}</span>
             </label>
           </li>
         </span>
       </div>
     </div>
-    <div class="col-9 products-area">     
-      <h4 class="mt-5"> O que seu cachorro precisa?</h4>
-      <div id="carouselExample" class="carousel slide mt-5">       
-        <ul class="carousel-inner">
-          <li class="carousel-item active">
-            <a href="#">
-            <img
-              src="/assets/img/cachorro-acessorios-para-alimentacao.jpg"
-              class="d-block" alt="...">
-             <h5>Acessórios para Alimentação</h5> 
-            </a>
-          </li>
-          <li class="carousel-item">
-           <a href="#"> 
-            <img
-              src="/assets/img/cachorro-medicina-saude.jpg"
-              class="d-block" alt="...">
-            <h5>Medicina e Saúde</h5>  
-            </a>
-          </li>
-          <li class="carousel-item">
-            <a href="#">
-            <img
-            src="/assets/img/cachorro-higiene-limpeza.jpg"
-             class="d-block" alt="...">
-            <h5> Higiene e Limpeza</h5>
-            </a>
-          </li>
-          <li class="carousel-item">
-            <a href="#">
-            <img
-            src="/assets/img/casinhas-e-acessorios.jpg"
-             class="d-block" alt="...">
-            <h5> Casinhas e Acessórios</h5>
-            </a>
-          </li>
-          <li class="carousel-item">
-            <a href="#">
-            <img
-            src="/assets/img/coleiras-guias-e-peitorais.jpg"
-             class="d-block" alt="...">
-            <h5> Coleiras guias e peitorais</h5>
-            </a>
-          </li>
-          <li class="carousel-item">
-            <a href="#">
-            <img
-            src="/assets/img/caixas-bolsas-de-transporte.jpg"
-             class="d-block" alt="...">
-            <h5> Caixas bolsas de transporte</h5>
-            </a>
-          </li>
-          <li class="carousel-item">
-            <a href="#">
-            <img
-            src="/assets/img/brinquedos.jpg"
-             class="d-block" alt="...">
-            <h5> Brinquedos</h5>
-            </a>
-          </li>
-          <li class="carousel-item">
-            <a href="#">
-            <img
-            src="/assets/img/shampoos-e-cosmeticos.jpg"
-             class="d-block" alt="...">
-            <h5> Shampoos e cosmeticos</h5>
-            </a>
-          </li>
-          <li class="carousel-item">
-            <a href="#">
-            <img
-            src="/assets/img/ossinhos-e-petiscos.jpg"
-             class="d-block" alt="...">
-            <h5> Ossinhos e petiscos</h5>
-            </a>
-          </li>
-          <li class="carousel-item">
-            <a href="#">
-            <img
-            src="/assets/img/marcas-exclusivas-racoes.png"
-             class="d-block" alt="...">
-            <h5> Alimentação seca</h5>
-            </a>
-          </li>
-        </ul>
+    <div class="col-9 products-area">
+      <h4 class="mt-5"> O que seu {{selectedPet}} precisa?</h4>
+      <div id="carouselExample" class="carousel slide mt-5">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <ul>
+              <li>
+                <a href="#">
+                  <img src="/assets/img/cachorro-acessorios-para-alimentacao.jpg" class="d-block" alt="...">
+                  <h5>Acessórios para Alimentação</h5>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/img/cachorro-medicina-saude.jpg" class="d-block" alt="...">
+                  <h5>Medicina e Saúde</h5>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/img/cachorro-higiene-limpeza.jpg" class="d-block" alt="...">
+                  <h5> Higiene e Limpeza</h5>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/img/casinhas-e-acessorios.jpg" class="d-block" alt="...">
+                  <h5> Casinhas e Acessórios</h5>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="carousel-item">
+            <ul >
+              <li>
+                <a href="#">
+                  <img src="/assets/img/coleiras-guias-e-peitorais.jpg" class="d-block" alt="...">
+                  <h5> Coleiras guias e peitorais</h5>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/img/caixas-bolsas-de-transporte.jpg" class="d-block" alt="...">
+                  <h5> Caixas bolsas de transporte</h5>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/img/brinquedos.jpg" class="d-block" alt="...">
+                  <h5> Brinquedos</h5>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/img/shampoos-e-cosmeticos.jpg" class="d-block" alt="...">
+                  <h5> Shampoos e cosmeticos</h5>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="carousel-item">
+            <ul >
+              <li>
+                <a href="#">
+                  <img src="/assets/img/ossinhos-e-petiscos.jpg" class="d-block" alt="...">
+                  <h5> Ossinhos e petiscos</h5>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="/assets/img/marcas-exclusivas-racoes.png" class="d-block" alt="...">
+                  <h5> Alimentação seca</h5>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <i class="bi bi-arrow-left"></i>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
@@ -120,22 +107,22 @@
         </button>
       </div>
       <div class="row">
-        <div class="d-flex align-items-center justify-content-between mt-4 mb-4"> 
-            <h4> Todos os produtos para cachorro </h4> 
-            <div class="dropdown drop-order">
-              <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Ordenar produtos por
-              </a>        
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Relevancia</a></li>
-                <li><a class="dropdown-item" href="#">Maior preço</a></li>
-                <li><a class="dropdown-item" href="#">Menor preço</a></li>
-                <li><a class="dropdown-item" href="#">Melhor avaliados</a></li>
-                <li><a class="dropdown-item" href="#">Melhores descontos</a></li>
-                <li><a class="dropdown-item" href="#">Lançamentos</a></li>
+        <div class="d-flex align-items-center justify-content-between mt-4 mb-4">
+          <h4> Todos os produtos para {{selectedPet}} </h4>
+          <div class="dropdown drop-order">
+            <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Ordenar produtos por
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Relevancia</a></li>
+              <li><a class="dropdown-item" href="#">Maior preço</a></li>
+              <li><a class="dropdown-item" href="#">Menor preço</a></li>
+              <li><a class="dropdown-item" href="#">Melhor avaliados</a></li>
+              <li><a class="dropdown-item" href="#">Melhores descontos</a></li>
+              <li><a class="dropdown-item" href="#">Lançamentos</a></li>
 
-              </ul>
-            </div>
+            </ul>
+          </div>
         </div>
         <div class="col-3" *ngFor="let product of products">
           <ul class="section-cards">
@@ -143,11 +130,7 @@
               <a>
                 <div class="product-content">
                   <div class="card-header">
-                    <img
-                      class="photo-style"
-                      [src]="product.photo"
-                      alt="photo"
-                    />
+                    <img class="photo-style" [src]="product.photo" alt="photo" />
                   </div>
                   <div class="card-footer">
                     <h4>
@@ -166,6 +149,49 @@
               </a>
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="row">
+      <div class="col-auto">
+        <h5>Como podemos ajudar você?</h5>
+        <h6>
+          Conheça mais sobre nossa empresa, políticas e tenha o melhor
+          atendimento do mercado pet 😍
+        </h6>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <p><b> Atendimento</b></p>
+            <p><a class="link"> Central de atendimento</a></p>
+            <p><a class="link"> Assessoria de imprensa</a></p>
+          </div>
+          <div class="col">
+            <p><b> Onde estamos</b></p>
+            <a class="btn" href="https://www.instagram.com/" role="button"><i class="bi bi-instagram"></i></a>
+            <a class="btn" href="https://twitter.com/home" role="button"><i class="bi bi-twitter"></i></a>
+            <a class="btn" href="https://www.youtube.com/" role="button"><i class="bi bi-youtube"></i></a>
+            <a class="btn" href="https://www.instagram.com/" role="button"><i class="bi bi-facebook"></i></a>
+            <a class="btn" href="https://www.instagram.com/" role="button"><i class="bi bi-whatsapp"></i></a>
+          </div>
+          <div class="col">
+            <p><b> Politicas</b></p>
+            <p><a class="link"> Aviso de privacidade</a></p>
+            <p><a class="link"> Política de Cookies</a></p>
+            <p><a class="link"> Política de entrega e devolução</a></p>
+            <p><a class="link"> Política de compra</a></p>
+          </div>
+          <div class="col">
+            <p><b>Institucional</b></p>
+            <p><a class="link">Sustentabilidade </a></p>
+            <p><a class="link">Empresa </a></p>
+            <p><a class="link"> Termos e condições de uso </a></p>
+            <p><a class="link">Canal de ética e conduta </a></p>
+            <p><a class="link">Trabalhe conosco </a></p>
+          </div>
         </div>
       </div>
     </div>

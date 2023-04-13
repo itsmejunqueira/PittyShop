@@ -164,7 +164,7 @@ export class ProductsService {
     },
     {
       id: 6,
-      photo: "../../assets/img/produtos/Petisco_Dreamies_para_Gatos_Adultos_Sabor_Carne_1.jpg",
+      photo: "../../assets/img/produtos/Antipulgas_Combo_Advocate_Elanco_para_Gatos_de_4_a_8_Kg.png",
       name: "Ração seca PREMIER filhotes 12kg",
       description: "",
       price: "R$ 124,00",
@@ -221,7 +221,13 @@ export class ProductsService {
   ] 
   constructor() { }
 
-  public getAllproducts(): Observable<TProducts[]> {
+  public getAllproducts(category:string): Observable<TProducts[]> {
+    console.log(this.productListDogs)
+   if (category == 'dogs')
+    return of(this.productListDogs);
+    if (category == 'cats')
+    return of(this.productListCats);
+    else 
     return of(this.productListDogs);
   }
   

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { TProducts } from 'src/app/shared/models/product.model';
 
@@ -9,8 +10,79 @@ import { TProducts } from 'src/app/shared/models/product.model';
 })
 export class ProductsComponent {
   checked = true;
-
+  selectedPet: string = "" ;
   filters: any[] =  [
+    {
+      name: 'Categorias',
+      id: '1',
+      data: [
+        {
+          name: 'Alimentação',
+          id: '1',
+          data: [],
+        },
+        {
+          name: 'Medicina e Saúde',
+          id: '2',
+          data: [],
+        },
+        {
+          name: 'Higiene e Limpeza',
+          id: '3',
+          data: [],
+        },   
+        {
+          name: 'Ossinhos e Petiscos',
+          id: '3',
+          data: [],
+        },     
+        {
+          name: 'Brinquedos',
+          id: '3',
+          data: [],
+        },
+        {
+          name: 'Acessórios para Alimentação',
+          id: '3',
+          data: [],
+        },
+        {
+          name: 'Shampoos e Cosméticos',
+          id: '3',
+          data: [],
+        },
+        {
+          name: 'Adestramento e Comportamento',
+          id: '3',
+          data: [],
+        },
+        {
+          name: 'Roupas e Acessórios ',
+          id: '3',
+          data: [],
+        },        
+        {
+          name: 'Caixas e Bolsas de Transporte',
+          id: '3',
+          data: [],
+        },
+        {
+          name: 'Caminhas e Outros',
+          id: '3',
+          data: [],
+        }, 
+        {
+          name: 'Casinhas e Acessórios Coleiras',
+          id: '3',
+          data: [],
+        }, ,
+        {
+          name: 'Guias e Peitorais',
+          id: '3',
+          data: [],
+        }, 
+      ],
+    },
     {
       name: 'Subcategorias',
       id: '1',
@@ -299,7 +371,9 @@ export class ProductsComponent {
   public products:TProducts[] = [];
 
   constructor(
-    private _ProductsService: ProductsService
+    private _ProductsService: ProductsService,
+    public readonly route: ActivatedRoute,
+
   ) {}
   
   ngOnInit(): void {
@@ -307,7 +381,12 @@ export class ProductsComponent {
   }
 
   loadProducts(){
-    this._ProductsService.getAllproducts().subscribe((productsResult)=>{
+    const { params } = this.route.snapshot;
+    if (params['category'] == 'dogs' )
+     this.selectedPet = 'Cachorro'   
+     if (params['category'] == 'cats' )
+     this.selectedPet = 'Gato'   
+    this._ProductsService.getAllproducts(params['category']).subscribe((productsResult)=>{
       this.products = productsResult;
     });
   }

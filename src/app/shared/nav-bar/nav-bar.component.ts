@@ -7,4 +7,6 @@ import { Tooltip } from 'bootstrap';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent{
+
+  
 }
