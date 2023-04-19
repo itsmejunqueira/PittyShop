@@ -1,5 +1,6 @@
 .container {
     font-family: 'Poppins', sans-serif;
+
     .container-products {
         display        : flex;
         justify-content: space-around;
@@ -16,78 +17,87 @@
                     list-style-type: none;
                     font-weight    : 400;
                     font-size      : 15px;
-                    font-family: 'Poppins', sans-serif;
+                    font-family    : 'Poppins', sans-serif;
                 }
             }
         }
 
         .products-area {
             font-family: 'Poppins', sans-serif;
+
             .carousel {
                 position: relative;
-                width: 100%;
-                padding: 0 2.5rem;
-                height: 160px;
+                width   : 100%;
+                padding : 0 2.5rem;
+                height  : 160px;
+
                 .carousel-control-prev {
-                    bottom: 50%;
-                    transform: translateY(50%);
-                    border-radius: 20px;
-                    background-color:rgb(249 238 242);
-                    opacity: 0.7;
-                    width: 40px;
-                    height: 40px;      
+                    bottom          : 50%;
+                    transform       : translateY(50%);
+                    border-radius   : 20px;
+                    background-color: rgb(249 238 242);
+                    opacity         : 0.7;
+                    width           : 40px;
+                    height          : 40px;
                 }
-               
+
                 .carousel-control-next {
                     bottom          : 50%;
                     transform       : translateY(50%);
-                    border-radius: 20px;
-                    background-color:rgb(249 238 242);
-                    opacity: 0.7;
-                    width: 40px;
-                    height: 40px;                  
+                    border-radius   : 20px;
+                    background-color: rgb(249 238 242);
+                    opacity         : 0.7;
+                    width           : 40px;
+                    height          : 40px;
                 }
-                .carousel-item{
+
+                .carousel-item {
                     height: auto;
-                    ul{
-                        list-style: none;
-                        display: flex;
-                        justify-content:space-around;
+
+                    ul {
+                        list-style     : none;
+                        display        : flex;
+                        justify-content: space-around;
                     }
-                    a{
+
+                    a {
                         text-decoration: none;
                     }
-                    h5{
-                       color: rgb(215, 15, 97);
-                        font-size: 15px;
-                        font-family: 'Poppins', sans-serif;
+
+                    h5 {
+                        color          : rgb(215, 15, 97);
+                        font-size      : 15px;
+                        font-family    : 'Poppins', sans-serif;
                         text-decoration: none;
                     }
                 }
             }
+
             .drop-order {
                 .btn {
-                    border            : none;
+                    border: none;
                 }
 
                 border         : 2px solid rgb(249 238 242);
                 box-shadow     : none;
                 border-radius  : 10px;
-                width: auto;
+                width          : auto;
                 display        : flex;
                 justify-content: space-between;
 
                 .btn-check:focus+.btn,
                 .btn:focus {
                     box-shadow: none;
-                    color: rgb(215, 15, 97);
+                    color     : rgb(215, 15, 97);
                 }
 
                 .dropdown-menu {
                     border: 2px solid rgb(235, 205, 217);
-                    width: 200px;
+                    width : 200px;
+
                     .dropdown-item {
                         font-family: 'Poppins', sans-serif;
+
                         &:hover {
                             color      : rgb(215, 15, 97);
                             font-weight: 500;
@@ -117,48 +127,99 @@
                     max-width       : max-content;
                     background-color: transparent;
                     list-style-type : none;
+                    .card-header{
+                        img{
+                            width: 150px;
+                            height: 150px;
+                            // object-fit: contain;
+                        }
+                    }
+                    .product-content{
+                        max-width: 200px;
+                        max-height: 400px;
+                    }
+                    .card-footer{
+                         min-height: 80px;
+                         cursor         : pointer;
+                         .product-name{
+                            word-wrap:break-word;
+                            overflow: hidden;
+                            visibility: visible;
+                            display: -webkit-box !important;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                         }
+                         .product-infos{
+                        //     display: flex;
+                        //   flex-direction: column;
+                         }
+                    }
                 }
             }
         }
     }
-    .footer{
-        .row{
-            .col-auto{
-                max-width: 423px;
-                height: 220px;
-                padding: 3.2rem 3.8rem;
-                margin: 2rem 1rem 2rem 0rem;
-                border-radius: 10px;
+
+    .footer {
+        .row {
+            .col-auto {
+                max-width       : 423px;
+                height          : 220px;
+                padding         : 3.2rem 3.8rem;
+                margin          : 2rem 1rem 2rem 0rem;
+                border-radius   : 10px;
                 background-color: #fbf9f7;
-                font-family: 'Poppins', sans-serif;
+                font-family     : 'Poppins', sans-serif;
             }
-          .col{
-            margin: 2rem 1rem;
-             .btn {
-                background-color: transparent;
-                border: none;
-                box-shadow: none;
-                padding: 0px 20px 0px 0px;
+
+            .col {
+                margin: 2rem 1rem;
+
+                .btn {
+                    background-color: transparent;
+                    border          : none;
+                    box-shadow      : none;
+                    padding         : 0px 20px 0px 0px;
+                }
+
+                .link {
+                    cursor         : pointer;
+                    color          : black;
+                    text-decoration: none;
+                    font-family    : 'Poppins', sans-serif;
+
+                    &:hover {
+                        color          : rgb(215, 15, 97);
+                        text-decoration: underline;
+                        font-weight    : 500;
+                        font-family    : 'Poppins', sans-serif;
+
+                        &::before {
+                            visibility       : visible;
+                            -webkit-transform: scaleX(1);
+                            transform        : scaleX(1);
+                        }
+                    }
+
+                }
             }
-            .link {
-                cursor         : pointer;
-                color: black;    
-                text-decoration: none;
-                font-family: 'Poppins', sans-serif;
-                &:hover {
-                    color: rgb(215, 15, 97);
-                    text-decoration: underline;
-                    font-weight: 500;
-                    font-family: 'Poppins', sans-serif;
-                    &::before {
-                        visibility: visible;
-                        -webkit-transform: scaleX(1);
-                        transform: scaleX(1);
-                    }   
-                }     
-                
-            }
-          }
         }
+    }
+
+    .btn-add {
+        width          : 100%;
+        height         : 50px;
+        padding        : 5px;
+        color          : #d70f61;
+        background     : #f9eef2;
+        border         : 1px solid #c11828;
+        position       : relative;
+        display        : inline-flex;
+        align-items    : center;
+        justify-content: center;
+        cursor         : pointer;
+        font-weight    : 500;
+        font-size      : 15px;
+        box-shadow     : none;
+
     }
 }

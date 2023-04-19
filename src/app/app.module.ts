@@ -14,6 +14,7 @@ import { CartModule } from './pages/cart/cart.module';
 import { ProductsService } from './core/services/products.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { CartService } from './core/services/cart.service';
 
 @NgModule({
   declarations: [

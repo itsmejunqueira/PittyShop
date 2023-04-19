@@ -4,7 +4,6 @@ export type TProducts = {
     id?: number;
     photo: string | SafeResourceUrl;
     name: string;
-    description: string;
     price: string;
 }
 

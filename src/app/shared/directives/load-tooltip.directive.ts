@@ -1,5 +1,5 @@
 // load-tooltip.directive.ts
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 import { Tooltip } from 'bootstrap';
 
 @Directive({
@@ -7,6 +7,8 @@ import { Tooltip } from 'bootstrap';
 })
 export class LoadTooltipDirective {
   constructor(private el: ElementRef) {
-    new Tooltip(el.nativeElement)
+    setTimeout(() => {
+      new Tooltip(el.nativeElement)
+    }, 1000);
   }
 }

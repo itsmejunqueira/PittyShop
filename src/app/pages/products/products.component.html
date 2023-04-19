@@ -1,4 +1,4 @@
-<app-nav-bar> </app-nav-bar>
+<app-nav-bar></app-nav-bar>
 <div class="container">
   <div class="row container-products">
     <div class="Banner-pet">
@@ -7,13 +7,16 @@
     </div>
 
     <div class="col-3 filter-area">
-      <div class="filter-category" *ngFor="let categoria of filters">
+      <div class="filter-category" *ngFor="let category of filters">
         <span>
-          <h5>{{ categoria.name }}</h5>
-          <li class="filter-style" *ngFor="let item of categoria.data">
+          <h5>{{ category.name }}</h5>
+          <li class="filter-style" *ngFor="let item of category.data">
             <label>
-              <input class="form-check-input me-2" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
-                (click)="checkItem(item)" />
+              <input class="form-check-input me-2" 
+              type="radio" 
+              name="flexRadioDefault" 
+              id="flexRadioDefault1"
+              (click)="checkItem(item)"/>
               <span> {{ item.name }}</span>
             </label>
           </li>
@@ -132,19 +135,24 @@
                   <div class="card-header">
                     <img class="photo-style" [src]="product.photo" alt="photo" />
                   </div>
-                  <div class="card-footer">
-                    <h4>
-                      {{ product.description }}
-                    </h4>
-                    <div class="product-price">
-                      <h6>
+                  <div class="card-footer">                  
+                    <div class="d-flex align-content-between flex-wrap">
+                      <h6 class="d-flex align-items-start product-name"
+                      Tooltip 
+                      data-bs-toggle="tooltip" 
+                      data-bs-placement="bottom" 
+                      [attr.data-bs-title]="product.name"
+                      >
                         {{ product.name }}
                       </h6>
-                      <span>
+                      <span class="d-flex align-items-end">
                         {{ product.price }}
                       </span>
-                    </div>
+                    </div>                                  
                   </div>
+                  <button class="btn btn-add" type="button" (click)="addCart()">
+                    Adicionar ao carrinho
+                   </button>    
                 </div>
               </a>
             </li>
@@ -197,3 +205,4 @@
     </div>
   </div>
 </div>
+

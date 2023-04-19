@@ -33,59 +33,59 @@ export class ProductsComponent {
         },   
         {
           name: 'Ossinhos e Petiscos',
-          id: '3',
+          id: '4',
           data: [],
         },     
         {
           name: 'Brinquedos',
-          id: '3',
+          id: '5',
           data: [],
         },
         {
           name: 'Acessórios para Alimentação',
-          id: '3',
+          id: '6',
           data: [],
         },
         {
           name: 'Shampoos e Cosméticos',
-          id: '3',
+          id: '7',
           data: [],
         },
         {
           name: 'Adestramento e Comportamento',
-          id: '3',
+          id: '8',
           data: [],
         },
         {
           name: 'Roupas e Acessórios ',
-          id: '3',
+          id: '9',
           data: [],
         },        
         {
           name: 'Caixas e Bolsas de Transporte',
-          id: '3',
+          id: '10',
           data: [],
         },
         {
           name: 'Caminhas e Outros',
-          id: '3',
+          id: '11',
           data: [],
         }, 
         {
           name: 'Casinhas e Acessórios Coleiras',
-          id: '3',
+          id: '12',
           data: [],
-        }, ,
+        },
         {
           name: 'Guias e Peitorais',
-          id: '3',
+          id: '13',
           data: [],
         }, 
       ],
     },
     {
       name: 'Subcategorias',
-      id: '1',
+      id: '2',
       data: [
         {
           name: 'Ração Seca',
@@ -106,7 +106,7 @@ export class ProductsComponent {
     },
     {
       name: 'Marcas',
-      id: '2',
+      id: '3',
       data: [ 
          {
         name: 'Natural',
@@ -142,7 +142,7 @@ export class ProductsComponent {
     },
     {
       name: 'Raças',
-      id: '3',
+      id: '4',
       data: [
         {
           name: 'Raças Pequenas',
@@ -163,42 +163,42 @@ export class ProductsComponent {
     },
     {
       name: 'Idade',
-      id: '4',
+      id: '5',
       data: [
         {
           name: 'Filhotes',
-          id: '4',
+          id: '1',
           data: [],
         },
         {
           name: 'Adultos',
-          id: '4',
+          id: '2',
           data: [],
         },
         {
           name: 'Idosos',
-          id: '4',
+          id: '3',
           data: [],
         },
       ],
     },
     {
       name: 'Sabor',
-      id: '4',
+      id: '6',
       data: [
         {
           name: 'Frango',
-          id: '4',
+          id: '1',
           data: [],
         },
         {
           name: 'Carne',
-          id: '4',
+          id: '2',
           data: [],
         },
         {
           name: 'Salmão',
-          id: '4',
+          id: '3',
           data: [],
         },
         {
@@ -208,43 +208,43 @@ export class ProductsComponent {
         },
         {
           name: 'Frutas',
-          id: '4',
+          id: '5',
           data: [],
         },
         {
           name: 'Vegetais',
-          id: '4',
+          id: '6',
           data: [],
         },
         {
           name: 'Cereais',
-          id: '4',
+          id: '7',
           data: [],
         },
         {
           name: 'Peru',
-          id: '4',
+          id: '8',
           data: [],
         },
       ],
     },
     {
       name: 'Tamanho do Grão',
-      id: '4',
+      id: '7',
       data: [
         {
           name: 'Grão Pequeno ',
-          id: '4',
+          id: '1',
           data: [],
         },
         {
           name: 'Grão medio ',
-          id: '4',
+          id: '2',
           data: [],
         },
         {
           name: 'Grão Mini',
-          id: '4',
+          id: '3',
           data: [],
         },
         {
@@ -257,21 +257,21 @@ export class ProductsComponent {
     },
     {
       name: 'Indicação Veterinária',
-      id: '4',
+      id: '8',
       data: [
         {
           name: 'Alérgico ',
-          id: '4',
+          id: '1',
           data: [],
         },
         {
           name: 'Intestinais',
-          id: '4',
+          id: '2',
           data: [],
         },
         {
           name: 'Renal',
-          id: '4',
+          id: '3',
           data: [],
         },
         {
@@ -284,21 +284,21 @@ export class ProductsComponent {
     },
     {
       name: 'Formula Natural',
-      id: '4',
+      id: '9',
       data: [
         {
           name: 'Sem corante',
-          id: '4',
+          id: '1',
           data: [],
         },
         {
           name: 'Sem trangênicos',
-          id: '4',
+          id: '2',
           data: [],
         },
         {
           name: 'Castrados',
-          id: '4',
+          id: '3',
           data: [],
         },
         {
@@ -311,21 +311,21 @@ export class ProductsComponent {
     },
     {
       name: 'Preço',
-      id: '4',
+      id: '10',
       data: [
         {
           name: 'até R$10',
-          id: '4',
+          id: '1',
           data: [],
         },
         {
           name: 'de R$10 até 30',
-          id: '4',
+          id: '2',
           data: [],
         },
         {
           name: 'de R$30 até 50',
-          id: '4',
+          id: '43',
           data: [],
         },
         {
@@ -335,7 +335,7 @@ export class ProductsComponent {
         },
         {
           name: 'de R$100 até 150',
-          id: '4',
+          id: '5',
           data: [],
         },
         
@@ -343,21 +343,21 @@ export class ProductsComponent {
     },
     {
       name: 'Tipo de Ração',
-      id: '4',
+      id: '11',
       data: [
         {
           name: 'Natural',
-          id: '4',
+          id: '1',
           data: [],
         },
         {
           name: 'Super premium',
-          id: '4',
+          id: '2',
           data: [],
         },
         {
           name: 'Premium especial',
-          id: '4',
+          id: '3',
           data: [],
         },
         {
@@ -386,7 +386,7 @@ export class ProductsComponent {
      this.selectedPet = 'Cachorro'   
      if (params['category'] == 'cats' )
      this.selectedPet = 'Gato'   
-    this._ProductsService.getAllproducts(params['category']).subscribe((productsResult)=>{
+    this._ProductsService.agetAllproducts(params['category']).subscribe((productsResult)=>{
       this.products = productsResult;
     });
   }
@@ -395,5 +395,7 @@ export class ProductsComponent {
      this.checked = !this.checked;
   }
  
-  
+  public addCart(){}
+
+ 
 }
