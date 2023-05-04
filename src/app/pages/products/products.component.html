@@ -146,13 +146,13 @@
                         {{ product.name }}
                       </h6>
                       <span class="d-flex align-items-end">
-                        {{ product.price }}
+                        R$ {{ product.price }}
                       </span>
                     </div>                                  
                   </div>
-                  <button class="btn btn-add" type="button" (click)="addCart()">
+                  <button class="btn btn-add" type="button" (click)="addCart(product)">
                     Adicionar ao carrinho
-                   </button>    
+                  </button>    
                 </div>
               </a>
             </li>

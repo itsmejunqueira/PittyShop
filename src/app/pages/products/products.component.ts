@@ -1,17 +1,18 @@
+import { TProducts } from './../../core/models/product.model';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/core/services/cart.service';
 import { ProductsService } from 'src/app/core/services/products.service';
-import { TProducts } from 'src/app/shared/models/product.model';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss']
+  styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
   checked = true;
-  selectedPet: string = "" ;
-  filters: any[] =  [
+  selectedPet: string = '';
+  filters: any[] = [
     {
       name: 'Categorias',
       id: '1',
@@ -30,12 +31,12 @@ export class ProductsComponent {
           name: 'Higiene e Limpeza',
           id: '3',
           data: [],
-        },   
+        },
         {
           name: 'Ossinhos e Petiscos',
           id: '4',
           data: [],
-        },     
+        },
         {
           name: 'Brinquedos',
           id: '5',
@@ -60,7 +61,7 @@ export class ProductsComponent {
           name: 'Roupas e Acessórios ',
           id: '9',
           data: [],
-        },        
+        },
         {
           name: 'Caixas e Bolsas de Transporte',
           id: '10',
@@ -70,7 +71,7 @@ export class ProductsComponent {
           name: 'Caminhas e Outros',
           id: '11',
           data: [],
-        }, 
+        },
         {
           name: 'Casinhas e Acessórios Coleiras',
           id: '12',
@@ -80,7 +81,7 @@ export class ProductsComponent {
           name: 'Guias e Peitorais',
           id: '13',
           data: [],
-        }, 
+        },
       ],
     },
     {
@@ -101,43 +102,43 @@ export class ProductsComponent {
           name: 'Ração Medicamentosa',
           id: '3',
           data: [],
-        },        
+        },
       ],
     },
     {
       name: 'Marcas',
       id: '3',
-      data: [ 
-         {
-        name: 'Natural',
-        id: '1',
-        data: [],
-      },
-      {
-        name: 'Biofresh',
-        id: '2',
-        data: [],
-      },
-      {
-        name: 'N&D',
-        id: '3',
-        data: [],
-      },
-      {
-        name: 'Seleção Natural',
-        id: '3',
-        data: [],
-      },
-      {
-        name: 'Golden',
-        id: '3',
-        data: [],
-      },
-      {
-        name: 'Seleção Natural',
-        id: '3',
-        data: [],
-      },
+      data: [
+        {
+          name: 'Natural',
+          id: '1',
+          data: [],
+        },
+        {
+          name: 'Biofresh',
+          id: '2',
+          data: [],
+        },
+        {
+          name: 'N&D',
+          id: '3',
+          data: [],
+        },
+        {
+          name: 'Seleção Natural',
+          id: '3',
+          data: [],
+        },
+        {
+          name: 'Golden',
+          id: '3',
+          data: [],
+        },
+        {
+          name: 'Seleção Natural',
+          id: '3',
+          data: [],
+        },
       ],
     },
     {
@@ -252,7 +253,6 @@ export class ProductsComponent {
           id: '4',
           data: [],
         },
-        
       ],
     },
     {
@@ -279,7 +279,6 @@ export class ProductsComponent {
           id: '4',
           data: [],
         },
-        
       ],
     },
     {
@@ -306,7 +305,6 @@ export class ProductsComponent {
           id: '4',
           data: [],
         },
-        
       ],
     },
     {
@@ -338,7 +336,6 @@ export class ProductsComponent {
           id: '5',
           data: [],
         },
-        
       ],
     },
     {
@@ -364,38 +361,39 @@ export class ProductsComponent {
           name: 'Premium',
           id: '4',
           data: [],
-        },        
+        },
       ],
     },
   ];
-  public products:TProducts[] = [];
+  public products: TProducts[] = [];
 
   constructor(
     private _ProductsService: ProductsService,
     public readonly route: ActivatedRoute,
-
+    private _CartService: CartService
   ) {}
-  
+
   ngOnInit(): void {
     this.loadProducts();
   }
 
-  loadProducts(){
+  loadProducts() {
     const { params } = this.route.snapshot;
-    if (params['category'] == 'dogs' )
-     this.selectedPet = 'Cachorro'   
-     if (params['category'] == 'cats' )
-     this.selectedPet = 'Gato'   
-    this._ProductsService.agetAllproducts(params['category']).subscribe((productsResult)=>{
-      this.products = productsResult;
-    });
+    if (params['category'] == 'dogs') this.selectedPet = 'Cachorro';
+    if (params['category'] == 'cats') this.selectedPet = 'Gato';
+    this._ProductsService
+      .agetAllproducts(params['category'])
+      .subscribe((productsResult) => {
+        this.products = productsResult;
+      });
   }
 
-  public checkItem(item:any): void {
-     this.checked = !this.checked;
+  public checkItem(item: any): void {
+    this.checked = !this.checked;
   }
- 
-  public addCart(){}
 
- 
+  public addCart(product: TProducts): void {
+    this._CartService.addItem(product);
+    console.log(this._CartService.showItens());
+  }
 }
