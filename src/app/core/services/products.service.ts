@@ -243,12 +243,21 @@ export class ProductsService {
       price: 120.00
       },
   ];
-
+  
+  CategoryBanners = {
+    dogs: 'assets/img/cachorro.jpg',
+    cats: 'assets/img/gatos.jpg',
+  }
   constructor() {}
 
-  public agetAllproducts(category: string): Observable<TProducts[]> {
+  public getAllproducts(category: string): Observable<TProducts[]> {
     if (category == 'dogs') return of(this.productListDogs);
     if (category == 'cats') return of(this.productListCats);
     else return of(this.productListDogs);
+  }
+  public getCategoryImg(category: string): Observable<string> {
+    if (category == 'dogs') return of(this.CategoryBanners[category]);
+    if (category == 'cats') return of(this.CategoryBanners[category]);
+    else return of(this.CategoryBanners['dogs']);
   }
 }

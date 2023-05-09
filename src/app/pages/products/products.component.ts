@@ -366,6 +366,7 @@ export class ProductsComponent {
     },
   ];
   public products: TProducts[] = [];
+  categoryImg: string = '';
 
   constructor(
     private _ProductsService: ProductsService,
@@ -374,7 +375,9 @@ export class ProductsComponent {
   ) {}
 
   ngOnInit(): void {
-    this.loadProducts();
+    this.route.params.subscribe(params => {
+      this.loadProducts();
+    })
   }
 
   loadProducts() {
@@ -382,9 +385,14 @@ export class ProductsComponent {
     if (params['category'] == 'dogs') this.selectedPet = 'Cachorro';
     if (params['category'] == 'cats') this.selectedPet = 'Gato';
     this._ProductsService
-      .agetAllproducts(params['category'])
+      .getAllproducts(params['category'])
       .subscribe((productsResult) => {
         this.products = productsResult;
+      });
+      this._ProductsService
+      .getCategoryImg(params['category'])
+      .subscribe((productsResult) => {
+        this.categoryImg = productsResult;
       });
   }
 
@@ -396,4 +404,5 @@ export class ProductsComponent {
     this._CartService.addItem(product);
     console.log(this._CartService.showItens());
   }
+
 }
