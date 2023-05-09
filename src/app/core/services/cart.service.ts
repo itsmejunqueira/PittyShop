@@ -1,6 +1,8 @@
+import { Order } from './../models/order.model';
 import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cart.model';
 import { TProducts } from '../models/product.model';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +21,7 @@ export class CartService{
         TProducts.id,
         TProducts.name,
         TProducts.photo,
-        TProducts.quantity,
+        1,
         TProducts.price,        
     )
 
@@ -61,7 +63,8 @@ public clearCart(): void {
   this.itens = []
 }
 
-effectBuy() {
-
+effectBuy(order: Order) {
+  return of (10)
 }
+
 }

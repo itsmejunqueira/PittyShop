@@ -23,7 +23,6 @@ import { ModalOrderSucessComponent } from './pages/cart/modal-order-sucess/modal
     HomeComponent,
     ProductsComponent,
     CartComponent,
-    ModalOrderSucessComponent,
     
   ],
   imports: [

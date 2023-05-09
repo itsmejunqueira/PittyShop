@@ -3,7 +3,7 @@
     <div class="nav-menu">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Pitshop</a>
+          <a class="navbar-brand" [routerLink]="['/']">Pitshop</a>
           <form class="search" role="search">
             <input class="form-control form-search" type="search" placeholder="Oque seu pet precisa hoje?"
               aria-label="Search" />
@@ -19,16 +19,16 @@
               </li>
               <li class="nav-item mx-3">
                 <a type="button" class="btn btn-secondary" Tooltip data-bs-toggle="tooltip" data-bs-placement="bottom"
-                  data-bs-title="Carrinho" href="/cart">
+                  data-bs-title="Carrinho" [routerLink]="['/cart']">
                   <i class="bi bi-basket-fill"></i>
                 </a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link active" aria-current="page" href="#">Meus Orders <i
+                <a class="nav-link active" aria-current="page" [routerLink]="['#']">Meus pedidos <i
                     class="bi bi-box2-heart-fill ms-1"></i></a>
               </li>
               <li class="nav-item mx-3">
-                <a class="nav-link" href="#">Favoritos <i class="bi bi-heart-half"></i>
+                <a class="nav-link" [routerLink]="['#']">Favoritos <i class="bi bi-heart-half"></i>
                 </a>
               </li>
               <li class="nav-item mx-3 dropdown">
@@ -38,12 +38,12 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li>
-                    <a class="dropdown-item" href="#"><i class="bi bi-emoji-heart-eyes me-2"></i>Meus pets</a>
+                    <a class="dropdown-item" [routerLink]="['#']"><i class="bi bi-emoji-heart-eyes me-2"></i>Meus pets</a>
                   </li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-person-fill-gear me-2"></i>Meus dados</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-stars me-2"></i>Avaliar produtos</a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-headset me-2"></i>Atendimento</a></li>
-                  <li><a class="dropdown-item" href="/login"><i class="bi bi-box-arrow-right me-2"></i>Sair</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['#']"><i class="bi bi-person-fill-gear me-2"></i>Meus dados</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['#']"><i class="bi bi-stars me-2"></i>Avaliar produtos</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['#']"><i class="bi bi-headset me-2"></i>Atendimento</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/login']"><i class="bi bi-box-arrow-right me-2"></i>Sair</a></li>
                 </ul>
               </li>
             </ul>
@@ -55,10 +55,10 @@
     <div class="nav-itens">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/products/dogs">Cachorro</a>
+          <a class="nav-link active" aria-current="page" [routerLink]="['/products/dogs']" >Cachorro</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/products/cats">Gato</a>
+          <a class="nav-link" aria-current="page" [routerLink]="['/products/cats']" >Gato</a>
         </li>
         <li class="nav-item">
           <a class="nav-link">Aves </a>
