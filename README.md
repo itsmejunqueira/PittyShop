@@ -23,9 +23,9 @@ login de acesso - fornecida pela api publica:
 
 
 
-![login](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/login.JPG)
-![recuperar senha](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/recuperar-senha.PNG)
-![criar conta](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/criar-conta.JPG)
+![login](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/login.JPG)
+![recuperar senha](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/recuperar-senha.PNG)
+![criar conta](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/criar-conta.JPG)
 
 
 📕Installation
