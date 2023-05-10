@@ -50,7 +50,8 @@ export class AuthService implements OnDestroy {
       map((res) => {
         const auth = new AuthModel();
         auth.token = res.token;
-        auth.expiresIn = new Date(Date.now() + 3600);
+        let date = new Date(Date.now() + 3600000);
+        auth.expiresIn = date.getTime();
         const result = this.setAuthFromLocalStorage(auth);
         this.setUserFromLocalStorage({email: email});
         return result;
@@ -82,6 +83,7 @@ export class AuthService implements OnDestroy {
 
       this.currentUserSubject = new BehaviorSubject<any>(user);
       return of(user)
+
     } else {
       this.logout();
       return of(undefined);

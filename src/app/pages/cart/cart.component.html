@@ -1,51 +1,71 @@
 <div class="container-cart">
-    <app-nav-bar></app-nav-bar>
+  <app-nav-bar></app-nav-bar>
 
-    <h5> Sacola </h5>
+  <h5>Seu carrinho</h5>
 
-    <div class="section-header" *ngIf="itemsCart.length; else carrinhoVazio">
-        <div class="card-iten" *ngFor="let item of itemsCart" class="form-row">
-            <img [src]="item.photo" class="img-fluid">
-            <span> {{item.name}} </span>
-            <button (click)="diminuir(item)" type="button" class="btn btn-link">-</button>
-            {{item.quantity}}
-            <button (click)="adicionar(item)" type="button" class="btn btn-link">+</button>
-            <span> 1 <i class="bi bi-trash3"></i></span>
-            <span> {{item.price}}</span>
-        </div>
-        <div class="resumeValues" *ngFor="let item of itemsCart">
-            <div class="header">
-                <span>Resumo do Order </span>
-            </div>
-            <ul class="p-0">
-                <li class="d-flex align-items-center justify-content-between">
-                    {{item.quantity * item.price | currency: 'BRL':true}}
-                </li>
-                <li class="d-flex align-items-center justify-content-between">
-                    <div> Descontos</div>
-                    <div> R$: 0,00 </div>
-                </li>
-                <li class="d-flex align-items-center justify-content-between">
-                    <div> Frete</div>
-                    <div>R$: 5,00 </div>
-                </li>
-            </ul>
-
-            <br />
-
-            <hr class="dropdown-divider" />
-            <div class="footer">
-                Total do Order: {{totalCarrinhoCompras() | currency: 'BRL':true}}
-                <button> Comprar </button>
-                <button> Escolher mais produtos </button>
-            </div>
+  <div class="section-header" *ngIf="itemsCart.length; else carrinhoVazio">
+    <div class="row"> 
+        <div class="card-iten" *ngFor="let item of itemsCart">
+         <div> 
+            <img [src]="item.photo" class="img-fluid" />
+            <span> {{ item.name }} </span>
+         </div>
+          <div> 
+              <button (click)="diminuir(item)" type="button" class="btn">-</button>
+              {{ item.quantity }}
+              <button (click)="adicionar(item)" type="button" class="btn">+</button>
+              <button class="btn"><i class="bi bi-trash3"></i></button>
+              <span> {{item.quantity * item.price | currency: 'BRL':true}}</span>
+          </div>
         </div>
     </div>
+    <hr class="vr" />
+    <div class="resumeValues">
+      <div class="header">
+        <span>Resumo da compra </span>
+      </div>
+      <ul class="p-0">
+        <li class="d-flex align-items-center justify-content-end">
+          {{ totalCarrinhoCompras() | currency : "BRL" : true }}
+        </li>
+        <li class="d-flex align-items-center justify-content-between">
+          <div>Descontos</div>
+          <div>R$: 0,00</div>
+        </li>
+        <li class="d-flex align-items-center justify-content-between">
+          <div>Frete</div>
+          <div>R$: 0,00</div>
+        </li>
+      </ul>
+      <hr class="dropdown-divider" />
+      <div class="footer">
+       <div  class="d-flex align-items-center justify-content-between"> 
+        <span> 
+            Total:
+        </span>
+        <span> 
+            {{ totalCarrinhoCompras() | currency : "BRL" : true }}
+        </span>
+    </div>     
+        <div class="checkout mt-2">
+          <button class="btn btn-add me-2">Continuar comprando</button>
+          <button class="btn btn-buy">Finalizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <ng-template #carrinhoVazio>
-    <div class="form-row d-flex justify-content-center"
-        style="background: #FAFAFA; padding: 20px; border-bottom: solid 1px #F0F0F0">
-        Seu carrinho está vazio! Não perca tempo, aproveite as ofertas.
-    </div>
+  <div
+    class="mx-5"
+    style="padding: 20px;"
+  >
+     <p class="text-center fw-bold fs-5"> Seu carrinho está vazio! </p> 
+     <p class="text-center fs-5"> 
+     Busque por um produto, serviço ou departamento, 
+     o carrinho de compras é um local temporário para armazenar uma lista de seus itens 
+     e reflete o preço mais recente de cada um deles.
+    </p> 
+  </div>
 </ng-template>

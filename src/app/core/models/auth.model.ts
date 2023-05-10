@@ -1,6 +1,6 @@
 export class AuthModel {
     token!: string;
-    expiresIn!: Date;
+    expiresIn!: number;
   
     AuthModel(auth: any) {
       this.token = auth.token;
