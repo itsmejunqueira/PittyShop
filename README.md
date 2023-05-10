@@ -3,16 +3,17 @@
 
 Loja virtual - petshop 
 - Telas de Login / Recuperar senha / Novo cadastro  
-- Tela de Inicio (dashboard).
-- Carrinho de compras 
-- Produtos 
-- Perfil dos pets
+- Tela de Inicio (Home page).
+- Tela de Produtos para caes
+- Tela de Produtos para gatos
+- Carrinho de compras (em construção)
 
 
 login de acesso - fornecida pela api publica: 
+ https://reqres.in/ 
 
-    email: ,
-    password: 
+    email: eve.holt@reqres.in ,
+    password: pistol
 
 👓 
  * [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
@@ -22,9 +23,9 @@ login de acesso - fornecida pela api publica:
 
 
 
-![login](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/login.JPG)
-![recuperar senha](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/recuperar-senha.PNG)
-![criar conta](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/criar-conta.JPG)
+![login](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/login.JPG)
+![recuperar senha](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/recuperar-senha.PNG)
+![criar conta](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/criar-conta.JPG)
 
 
 📕Installation
