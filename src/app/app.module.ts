@@ -15,7 +15,8 @@ import { ProductsService } from './core/services/products.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CartService } from './core/services/cart.service';
-import { ModalOrderSucessComponent } from './pages/cart/modal-order-sucess/modal-order-sucess.component';
+import { AuthService } from './core/services/auth.service';
+import { ToastService } from './core/services/toast.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { ModalOrderSucessComponent } from './pages/cart/modal-order-sucess/modal
     BrowserAnimationsModule,
     NgxSpinnerModule,
   ],
-  providers: [ProductsService],
+  providers: [ProductsService, CartService, AuthService, ToastService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

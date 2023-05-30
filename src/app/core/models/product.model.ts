@@ -7,10 +7,3 @@ export type TProducts = {
     quantity: number;
     price: number;
 }
-
-// public id: number
-// public categoria: string
-// public titulo: string
-// public descricao_oferta: string
-// public valor: number
-// public imagens: Array<object>

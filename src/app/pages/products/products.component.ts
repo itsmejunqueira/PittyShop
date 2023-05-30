@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/core/services/cart.service';
 import { ProductsService } from 'src/app/core/services/products.service';
+import { EventTypes } from 'src/app/shared/models/event-types';
+import { ToastService } from 'src/app/core/services/toast.service';
 
 @Component({
   selector: 'app-products',
@@ -368,16 +370,19 @@ export class ProductsComponent {
   public products: TProducts[] = [];
   categoryImg: string = '';
 
+  EventTypes = EventTypes;
+
   constructor(
+    private toastService: ToastService,
     private _ProductsService: ProductsService,
     public readonly route: ActivatedRoute,
     private _CartService: CartService
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       this.loadProducts();
-    })
+    });
   }
 
   loadProducts() {
@@ -389,7 +394,7 @@ export class ProductsComponent {
       .subscribe((productsResult) => {
         this.products = productsResult;
       });
-      this._ProductsService
+    this._ProductsService
       .getCategoryImg(params['category'])
       .subscribe((productsResult) => {
         this.categoryImg = productsResult;
@@ -403,6 +408,10 @@ export class ProductsComponent {
   public addCart(product: TProducts): void {
     this._CartService.addItem(product);
     console.log(this._CartService.showItens());
+    this.toastService.showSuccessToast(
+      'Sucesso!',
+      'Produto adicionado ao carrinho.'
+    );
   }
 
 }
