@@ -23,6 +23,11 @@
             justify-content : center;   
         }
     }
+
+    .cancel-btn{
+        display        : flex;
+        align-items    : start;
+    }
 }
 
 .card-input {

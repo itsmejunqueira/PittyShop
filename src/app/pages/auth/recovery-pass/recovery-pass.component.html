@@ -1,5 +1,12 @@
-<div class="container-login">
+<div class="container-login">        
     <div class="card mb-3">
+      <button
+      type="button"
+      [routerLink]="['/login']"
+      class="btn cancel-btn fw-bold"
+    >
+    <i class="bi bi-arrow-left me-2"></i>  Voltar
+    </button>
       <div class="row g-0">
         <div class="col-12">
           <img src="assets/img/esqueceu-senha.jpg" class="img-fluid" alt="..." />
@@ -20,17 +27,18 @@
               </label>
           
               <button type="submit"  
-              [disabled]="!formlogin.valid" 
+             
               class="btn btn-purple">
-              <span class="d-flex align-items-center justify-content-center">
+              <span class="d-flex align-items-center justify-content-center" [routerLink]="['/login']">
                 Recuperar
               </span>
               </button>
             </form>
             <span class="d-flex justify-content-center">
               Não tem conta?
-              <a class="a-link ms-2" href="/new-password">Crie uma agora! </a>
+              <a class="a-link ms-2" [routerLink]="['/auth/new-password']">Crie uma agora! </a>
             </span>
+            
           </div>
         </div>
       </div>

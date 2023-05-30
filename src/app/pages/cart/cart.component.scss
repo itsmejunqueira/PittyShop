@@ -21,6 +21,7 @@
         width           : 95%;
         margin          : auto;
         background-color: white;
+        max-height: 60%;
 
         .card-iten {
             margin-bottom  : 10px;
@@ -39,7 +40,7 @@
         }
         .vr {           
             width: 2px;
-            min-height: 13em;
+            min-height: 19em;
         }
         .resumeValues {
             min-width  : 30%;
