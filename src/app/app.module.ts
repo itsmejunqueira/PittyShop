@@ -5,12 +5,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { ProductsComponent } from './pages/products/products.component';
-import { CartComponent } from './pages/cart/cart.component';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './pages/auth/auth.module';
 import { ProductsModule } from './pages/products/products.module';
 import { HomeModule } from './pages/home/home.module';
-import { CartModule } from './pages/cart/cart.module';
+import { CheckoutModule } from './pages/checkout/checkout.module';
 import { ProductsService } from './core/services/products.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -19,13 +18,7 @@ import { AuthService } from './core/services/auth.service';
 import { ToastService } from './core/services/toast.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ProductsComponent,
-    CartComponent,
-    
-  ],
+  declarations: [AppComponent, HomeComponent, ProductsComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,7 +27,7 @@ import { ToastService } from './core/services/toast.service';
     CoreModule,
     ProductsModule,
     HomeModule,
-    CartModule,
+    CheckoutModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
   ],

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/core/services/cart.service';
 import { ProductsService } from 'src/app/core/services/products.service';
-import { EventTypes } from 'src/app/shared/models/event-types';
+import { EventTypes } from 'src/app/core/models/event-types';
 import { ToastService } from 'src/app/core/services/toast.service';
 
 @Component({
@@ -413,5 +413,4 @@ export class ProductsComponent {
       'Produto adicionado ao carrinho.'
     );
   }
-
 }

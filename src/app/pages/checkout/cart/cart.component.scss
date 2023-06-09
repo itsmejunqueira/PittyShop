@@ -2,7 +2,7 @@
     background-color: #fbf9f7;
     width           : 100%;
     height          : 100vh;
-    
+
     h5 {
         margin: 5% 10%;
     }
@@ -21,15 +21,16 @@
         width           : 95%;
         margin          : auto;
         background-color: white;
-        max-height: 60%;
+        max-height      : 60%;
 
         .card-iten {
             margin-bottom  : 10px;
             display        : flex;
             align-items    : center;
             justify-content: space-between;
-            width: 82%;
-            min-width: 89%;
+            width          : 82%;
+            min-width      : 89%;
+
             .img-fluid {
                 width: 10%;
             }
@@ -38,13 +39,15 @@
         .bi-trash3 {
             color: red;
         }
-        .vr {           
-            width: 2px;
+
+        .vr {
+            width     : 2px;
             min-height: 19em;
         }
+
         .resumeValues {
-            min-width  : 30%;
-            padding: 20px;
+            min-width: 30%;
+            padding  : 20px;
 
             .header {
                 font-weight: 500;
@@ -52,7 +55,7 @@
 
             .footer {
                 font-weight: 500;
-             
+
                 .checkout {
                     display        : flex;
                     align-items    : center;

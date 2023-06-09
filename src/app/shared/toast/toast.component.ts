@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { Toast } from 'bootstrap';
 import { fromEvent, take } from 'rxjs';
-import { EventTypes } from '../models/event-types';
+import { EventTypes } from '../../core/models/event-types';
 
 @Component({
   selector: 'app-toast',

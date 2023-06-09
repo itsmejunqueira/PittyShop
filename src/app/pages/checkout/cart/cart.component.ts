@@ -11,9 +11,6 @@ import { ProductsService } from 'src/app/core/services/products.service';
 })
 export class CartComponent {
   public itemsCart: CartItem[] = [];
-//totalOrder: any;
-
-
   constructor(
     private _ProductsService: ProductsService,
     public readonly route: ActivatedRoute,
@@ -26,13 +23,13 @@ export class CartComponent {
   }
 
   public adicionar(item: CartItem): void {
-    this._CartService.adicionarQuantidade(item);
+    this._CartService.addQuantity(item);
   }
   public diminuir(item: CartItem): void {
-    this._CartService.diminuirQuantidade(item);
+    this._CartService.decreaseQuantity(item);
   }
 
-  public totalCarrinhoCompras(): number {
+  public totalCartShopp(): number {
     let totalOrder: number = 0;
     this.itemsCart.map((item: CartItem) => {
       totalOrder = totalOrder + item.price * item.quantity;

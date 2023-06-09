@@ -1,0 +1,166 @@
+<app-nav-bar></app-nav-bar>
+<div>
+  <div class="purchase-order mt-4" *ngIf="idOrderPurchase === undefined">
+    <form [formGroup]="form" novalidate (ngSubmit)="confirmPurchase()">
+      <h5>Dados de entrega</h5>
+      <hr />
+
+      <div class="form-row">
+        <div class="d-flex align-items-center justify-content-space-around">
+          <div class="form-group col-md-4 mt-2 me-2">
+            <input
+              type="text"
+              class="form-control {{
+                addressState ? '' : addressValid ? 'is-ivalid' : 'is-invalid'
+              }}"
+              placeholder="Endereço"
+              autocomplete="off"
+              formControlName="address"
+              minlength="5"
+              required
+              [value]="address"
+              #inputAddress
+              (input)="updateAddress(inputAddress.value)"
+            />
+            <div *ngIf="addressState == false">
+              <div *ngIf="addressValid">
+                <small class="form-text text-success">√</small>
+              </div>
+              <ng-template #errorAddress>
+                <small class="form-text text-danger">Endereço inválido</small>
+              </ng-template>
+            </div>
+          </div>
+          <div class="form-group col-md-2 mt-2 me-2">
+            <input
+              type="text"
+              class="form-control {{
+                numberState ? '' : numberValid ? 'is-ivalid' : 'is-invalid'
+              }}"
+              placeholder="Número"
+              autocomplete="off"
+              minlength="1"
+              required
+              [value]="number"
+              #inputNumber
+              (input)="updateNumber(inputNumber.value)"
+              formControlName="number"
+            />
+            <div *ngIf="numberState == false">
+              <div *ngIf="numberValid; else errorNumberInvalid">
+                <small class="form-text text-success">√</small>
+              </div>
+              <ng-template #errorNumberInvalid>
+                <small class="form-text text-danger">Numero inválido</small>
+              </ng-template>
+            </div>
+          </div>
+          <div class="form-group col-md-2 mt-2">
+            <input
+              type="text"
+              class="form-control {{
+                complementState ? '' : complementValid ? 'is-ivalid' : ''
+              }}"
+              placeholder="complemento"
+              autocomplete="off"
+              [value]="complement"
+              #inputComplement
+              (input)="updateComplement(inputComplement.value)"
+              formControlName="complement"
+            />
+            <div *ngIf="complementState == false">
+              <div *ngIf="complementValid">
+                <small class="form-text text-success">√</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-space-around">
+          <div class="form-group col-md-2 mt-2 me-2">
+            <input
+              type="text"
+              class="form-control {{
+                cepState ? '' : cepValid ? 'is-ivalid' : ''
+              }}"
+              placeholder="cep"
+              autocomplete="off"
+              formControlName="cep"
+            />
+            <div *ngIf="cepState == false">
+              <div *ngIf="cepValid">
+                <small class="form-text text-success">√</small>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-2 mt-2">
+            <input
+              type="text"
+              class="form-control {{
+                cityState ? '' : cityValid ? 'is-ivalid' : ''
+              }}"
+              placeholder="cidade"
+              autocomplete="off"
+              formControlName="city"
+            />
+            <div *ngIf="cityState == false">
+              <div *ngIf="cityValid">
+                <small class="form-text text-success">√</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <h5>Forma de pagamento</h5>
+      <hr />
+
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <select
+            class="form-control {{
+              paymentState ? '' : paymentValid ? 'is-ivalid' : 'is-invalid'
+            }}"
+            #selectPayment
+            (change)="updatePayment(selectPayment.value)"
+            formControlName="payment"
+            placeholder="Selecione uma opção"
+          >
+            <option
+              value="pix"
+              selected="{{ payment == 'pix' ? 'selected' : '' }}"
+            >
+              Pix
+            </option>
+            <option
+              value="Crédito"
+              selected="{{ payment == 'Crédito' ? 'selected' : '' }}"
+            >
+             Cartão de Crédito
+            </option>
+          </select>
+          <div *ngIf="paymentState == false">
+            <div *ngIf="paymentValid; else paymentInvalid">
+              <small class="form-text text-success">√</small>
+            </div>
+            <ng-template #paymentInvalid>
+              <small class="form-text text-danger"
+                >Forma de pagamento inválida</small
+              >
+            </ng-template>
+          </div>
+        </div>
+      </div>
+      <button
+        class="btn btn-primary btn-lg mt-3"
+        [disabled]="!form.valid"
+        (click)="confirmPurchase()"
+      >
+        Confirmar compra
+      </button>
+    </form>
+  </div>
+  <div class="purchase-order" *ngIf="idOrderPurchase !== undefined">
+    <app-modal-order-sucess></app-modal-order-sucess>
+  </div>
+</div>

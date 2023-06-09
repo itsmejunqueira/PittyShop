@@ -1,0 +1,15 @@
+{
+  "order": [
+    {
+      "id": 1,
+      "address": "Rua ABC",
+      "number": "10",
+      "complement": "Casa 2",
+      "paymentMenthod": 1,
+      "itens": []
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { ToastEvent } from '../models/toast-event';
-import { EventTypes } from '../../shared/models/event-types';
+import { EventTypes } from '../models/event-types';
 
 @Injectable({
   providedIn: 'root',
@@ -66,8 +66,8 @@ export class ToastService {
     });
   }
 
-  // Lembrete de uso do toast 
-  
+  // Lembrete de uso do toast
+
   // showToast(type: EventTypes) {
   //   switch (type) {
   //     case EventTypes.Success:

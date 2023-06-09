@@ -26,7 +26,7 @@
       </div>
       <ul class="p-0">
         <li class="d-flex align-items-center justify-content-end">
-          {{ totalCarrinhoCompras() | currency : "BRL" : true }}
+          {{ totalCartShopp() | currency : "BRL" : true }}
         </li>
         <li class="d-flex align-items-center justify-content-between">
           <div>Descontos</div>
@@ -44,12 +44,12 @@
             Total:
         </span>
         <span> 
-            {{ totalCarrinhoCompras() | currency : "BRL" : true }}
+            {{ totalCartShopp() | currency : "BRL" : true }}
         </span>
     </div>     
         <div class="checkout mt-2">
           <button class="btn btn-add me-2" [routerLink]="['/']">Continuar comprando</button>
-          <button class="btn btn-buy">Finalizar</button>
+          <button class="btn btn-buy" [routerLink]="['/cart/shopping-order']">Finalizar</button>
         </div>
       </div>
     </div>
