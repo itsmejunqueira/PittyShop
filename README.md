@@ -25,11 +25,11 @@ login de acesso - fornecida pela api publica:
 
 ![login](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/login.JPG)
 ![recuperar senha](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/recuperar-senha.PNG)
-![criar conta](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/criar-conta.JPG)
+![criar conta](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/criar-conta.JPG)
 ![Home](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/home-pet.JPG)
 ![Home](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/home-pet-2.JPG)
-![Produtos caes](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/produtos-caesJPG.JPG)
 ![Produtos gatos](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/produtos-cat.JPG)
+![Produtos caes](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/produtos-caesJPG.JPG)
 ![carrinho](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/carrinho-pet-jpg.JPG)
 
 
