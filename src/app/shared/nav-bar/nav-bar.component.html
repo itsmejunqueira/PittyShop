@@ -7,7 +7,7 @@
           <form class="search" role="search">
             <input class="form-control form-search" type="search" placeholder="Oque seu pet precisa hoje?"
               aria-label="Search" />
-            <button class="btn" type="button">
+            <button class="btn search" type="button" id="search" aria-label="searchIcone">
               <i class="bi bi-search-heart"></i>
             </button>
           </form>
@@ -15,11 +15,11 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item mx-3" Tooltip data-bs-toggle="tooltip" data-bs-placement="bottom"
                 data-bs-title="Endereço de entrega">
-                <a class="nav-link disabled">04252-000 <i class="bi bi-geo-alt"></i></a>
+                <a class="nav-link disabled" id="cep" aria-label="trocar ou adicionar endereço de entrega">04252-000 <i class="bi bi-geo-alt"></i></a>
               </li>
               <li class="nav-item mx-3">
-                <a type="button" class="btn btn-secondary" Tooltip data-bs-toggle="tooltip" data-bs-placement="bottom"
-                  data-bs-title="Carrinho" [routerLink]="['/cart']">
+                <a type="button" class="btn btn-secondary cart" Tooltip data-bs-toggle="tooltip" data-bs-placement="bottom"
+                 id="Carrinho" aria-label="carrinho-compras" data-bs-title="Carrinho" [routerLink]="['/cart']">
                   <i class="bi bi-basket-fill"></i>
                 </a>
               </li>
@@ -61,25 +61,25 @@
           <a class="nav-link" aria-current="page" [routerLink]="['/products/cats']" >Gato</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Aves </a>
+          <a class="nav-link" aria-label="produtos para aves" [routerLink]="['/products/']">Aves </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Roedores</a>
+          <a class="nav-link" aria-label="produtos para Roedores" [routerLink]="['/products/']">Roedores</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Peixes</a>
+          <a class="nav-link" aria-label="produtos para Peixes"[routerLink]="['/products/']" >Peixes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Marcas</a>
+          <a class="nav-link" aria-label="confira nossas Marcas" [routerLink]="['/products/']">Marcas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Outlet</a>
+          <a class="nav-link" aria-label="confira nossas promoçoes" [routerLink]="['/products/']">Outlet</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Doações</a>
+          <a class="nav-link" aria-label="faca sua doacao" [routerLink]="['/']">Doações</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Serviços</a>
+          <a class="nav-link disabled" aria-label="outros serviços disponiveis" [routerLink]="['/']">Serviços</a>
         </li>
       </ul>
     </div>

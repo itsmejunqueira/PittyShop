@@ -10,6 +10,7 @@
       <div class="filter-category" *ngFor="let category of filters">
         <span>
           <h5>{{ category.name }}</h5>
+          <ul> 
           <li class="filter-style" *ngFor="let item of category.data">
             <label>
               <input class="form-check-input me-2" 
@@ -20,6 +21,7 @@
               <span> {{ item.name }}</span>
             </label>
           </li>
+         </ul>
         </span>
       </div>
     </div>
@@ -30,25 +32,25 @@
           <div class="carousel-item active">
             <ul>
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/cachorro-acessorios-para-alimentacao.jpg" class="d-block" alt="...">
                   <h5>Acessórios para Alimentação</h5>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/cachorro-medicina-saude.jpg" class="d-block" alt="...">
                   <h5>Medicina e Saúde</h5>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/cachorro-higiene-limpeza.jpg" class="d-block" alt="...">
                   <h5> Higiene e Limpeza</h5>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/casinhas-e-acessorios.jpg" class="d-block" alt="...">
                   <h5> Casinhas e Acessórios</h5>
                 </a>
@@ -58,25 +60,25 @@
           <div class="carousel-item">
             <ul >
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/coleiras-guias-e-peitorais.jpg" class="d-block" alt="...">
                   <h5> Coleiras guias e peitorais</h5>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/caixas-bolsas-de-transporte.jpg" class="d-block" alt="...">
                   <h5> Caixas bolsas de transporte</h5>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/brinquedos.jpg" class="d-block" alt="...">
                   <h5> Brinquedos</h5>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/shampoos-e-cosmeticos.jpg" class="d-block" alt="...">
                   <h5> Shampoos e cosmeticos</h5>
                 </a>
@@ -86,13 +88,13 @@
           <div class="carousel-item">
             <ul >
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/ossinhos-e-petiscos.jpg" class="d-block" alt="...">
                   <h5> Ossinhos e petiscos</h5>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a id="" aria-label="" href="#">
                   <img src="/assets/img/marcas-exclusivas-racoes.png" class="d-block" alt="...">
                   <h5> Alimentação seca</h5>
                 </a>
@@ -130,7 +132,7 @@
         <div class="col-3" *ngFor="let product of products">
           <ul class="section-cards">
             <li class="card-product">
-              <a>
+              <a id="produtos" aria-label="escolher e adicionar ao carrinho">
                 <div class="product-content">
                   <div class="card-header">
                     <img class="photo-style" [src]="product.photo" alt="photo" />
@@ -150,7 +152,7 @@
                       </span>
                     </div>                                  
                   </div>
-                  <button class="btn btn-add" type="button" (click)="addCart(product)" id="btnToast">
+                  <button class="btn btn-add" type="button" (click)="addCart(product)" id="btnToast" aria-label="adicionar produto carrinho">
                     Adicionar ao carrinho
                   </button>    
                 </div>
@@ -179,11 +181,11 @@
           </div>
           <div class="col">
             <p><b> Onde estamos</b></p>
-            <a class="btn" href="https://www.instagram.com/" role="button"><i class="bi bi-instagram"></i></a>
-            <a class="btn" href="https://twitter.com/home" role="button"><i class="bi bi-twitter"></i></a>
-            <a class="btn" href="https://www.youtube.com/" role="button"><i class="bi bi-youtube"></i></a>
-            <a class="btn" href="https://www.instagram.com/" role="button"><i class="bi bi-facebook"></i></a>
-            <a class="btn" href="https://www.instagram.com/" role="button"><i class="bi bi-whatsapp"></i></a>
+            <a class="btn-icone" href="https://www.instagram.com/" role="button"><i class="bi bi-instagram"></i></a>
+            <a class="btn-icone" href="https://twitter.com/home" role="button"><i class="bi bi-twitter"></i></a>
+            <a class="btn-icone" href="https://www.youtube.com/" role="button"><i class="bi bi-youtube"></i></a>
+            <a class="btn-icone" href="https://www.instagram.com/" role="button"><i class="bi bi-facebook"></i></a>
+            <a class="btn-icone" href="https://www.instagram.com/" role="button"><i class="bi bi-whatsapp"></i></a>
           </div>
           <div class="col">
             <p><b> Politicas</b></p>
