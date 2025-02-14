@@ -51,6 +51,7 @@
                   "maximumError": "5kb"
                 }
               ],
+              "baseHref": "/PityShop/",
               "outputHashing": "all"
             },
             "development": {
