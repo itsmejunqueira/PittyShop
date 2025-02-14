@@ -17,11 +17,30 @@ login de acesso - fornecida pela api publica:
     password: pistol
 
 👓 
- * [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
- * Html/Css/js
- * Angular Material and Bootstrap 5.3
- * API https://reqres.in/ 
+<div>
+   <a href="#">
+        <img src="https://img.shields.io/static/v1?label=Language&message=Typescript&color=blue&style=for-the-badge&logo=Typescript" alt="Language: Typescript">
+    </a>
+    <a href="#">
+        <img src="https://img.shields.io/static/v1?label=Language&message=Javascript&color=yellow&style=for-the-badge&logo=JavaScript" alt="Language: Javascript">
+    </a>
+   <a href="#">
+        <img src="https://img.shields.io/static/v1?label=Language&message=SASS&color=ff69b4&style=for-the-badge&logo=SASS" alt="Language: SASS">
+    </a>
+  <br>
+    <a  href="#">
+      <img  src="https://img.shields.io/static/v1?label=Framework&message=Angular 15&color=e23237&style=for-the-badge&logo=Angular"  alt="Language: Angular"> 
+    </a>
+    <a href="#">
+      <img  src="https://img.shields.io/static/v1?label=framework&message=Bootstrap&color=563d7c&style=for-the-badge&logo=Bootstrap"  alt="Language: Bootstrap">
+    </a>
+      <a  href="#">
+      <img  src="https://img.shields.io/static/v1?label=Design&message=Angular material&color=e23237&style=for-the-badge&logo=Angular"  alt="Language: Angular"> 
+    </a>
+    <br>
 
+ * API https://reqres.in/ 
+</div>
 
 
 ![login](https://github.com/itsmejunqueira/PittyShop/blob/main/src/assets/img/midia/login.JPG)
