@@ -38,8 +38,6 @@ login de acesso - fornecida pela api publica:
       <img  src="https://img.shields.io/static/v1?label=Design&message=Angular material&color=e23237&style=for-the-badge&logo=Angular"  alt="Language: Angular"> 
     </a>
     <br>
-
- * API https://reqres.in/ 
 </div>
 
 
