@@ -9,6 +9,9 @@ Loja virtual - petshop
 - Tela de Produtos para gatos
 - Carrinho de compras (em construção)
 
+Veja uma previa por aqui: 😁 👇🏻
+
+https://itsmejunqueira.github.io/PittyShop/
 
 login de acesso - fornecida pela api publica: 
  https://reqres.in/ 
