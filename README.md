@@ -2,7 +2,7 @@
 # PittyShop
 📌About 
 
-Loja virtual - petshop 
+E-commerce - petshop 
 - Telas de Login / Recuperar senha / Novo cadastro  
 - Tela de Inicio (Home page).
 - Tela de Produtos para caes
